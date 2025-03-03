@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Function</title>
+</head>
+<body>
+
+	<h1>JavaScript Functions</h1>
+	<p>Call a function which performs a calculation and returns the result:</p>
+	<p id="demo"></p>
+	<hr>
+
+	<p>Call a function which performs a calculation and returns the result 02:</p>
+	<p id="demo02"></p>
+	<hr>
+
+	<p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p>
+	<p id="demo03"></p>
+	<hr>
+
+	<h3>Functions Used as Variable Values</h3>
+	<p>unctions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.</p>
+	<p id="demo04"></p>
+	<hr>
+
+	<h3>Local Variables</h3>
+	<p>Variables declared within a JavaScript function, become LOCAL to the function. Local variables can only be accessed from within the function.</p>
+	<p id="demo05"></p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<button type="button" onclick="chaman()">07</button>
+	<table id="lalu" style="display: none;">
+		<tr>
+			<th>No.</th>
+			<th>Name</th>
+			<th>Roll No.</th>
+			<th>Passworld</th>
+		</tr>
+		<tr>
+			<td>01</td>
+			<td>Chauhan harik</td>
+			<td>007</td>
+			<td>123456</td>
+		</tr>
+	</table>
+<script>
+	function myFunction(p1, p2){
+		return p1 * p2;
+	}
+	let result = myFunction(4, 3);
+	document.getElementById("demo").innerHTML = result;
+
+	let a = myFunction(8, 4);
+	document.getElementById("demo02").innerHTML = a;
+	function myFunction(a, b) {
+		return a * b;
+	}
+
+	// The () Operator 
+	// The () operator invokes (calls) the function:
+	function toCelsius(f){
+		return (5/9) * (f-32);
+	}
+		// Accessing a function with incorrect parameters can return an incorrect answer
+			// let h = toCelsius();
+		// Accessing a function without () returns the function and not the function result:
+			// let h = toCelsius;
+		// This is simple function code 
+			let h = toCelsius(77);
+	document.getElementById("demo03").innerHTML = h;
+
+	// Functions Used as Variable Values
+	let x = tocelsius(77);
+	let text = "The temperature is " + x + "celsius";
+	document.getElementById("demo04").innerHTML = text;
+
+	function tocelsius(fahrenheit){
+		return (5/9) * (fahrenheit-32);
+	}
+
+	// Local Variable
+	let text02 = "Outside: " + typeof carName;
+	document.getElementById("demo05").innerHTML = text02;
+
+	function myFunction() {
+		let carname = "VolVo";
+		let text02 = "inside : " + typeof carname + "" + carname;
+		document.getElementById("demo06").innerHTML = text02; 
+	}
+
+	// demo07
+	function chaman(){
+		document.getElementById("lalu").style.display = "block";
+
+	}
+
+</script>
+</body>
+</html>
+
+<!-- A JavaScript function is a block of code designed to perform a particular task.
+	A JavaScript function is executed when "something" invokes it (calls it). -->
+
+<!-- JavaScript Function Syntax -->
+
+	<!-- A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().
+	Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+	The parentheses may include parameter names separated by commas:
+	(parameter1, parameter2, ...)
+	The code to be executed, by the function, is placed inside curly brackets: {} -->
+		<!-- function name(parameter1, parameter2, parameter3) {
+			// code to be executed
+		} -->
+
+<!-- Function parameters are listed inside the parentheses () in the function definition.
+Function arguments are the values received by the function when it is invoked.
+Inside the function, the arguments (the parameters) behave as local variables. -->
+
+<!-- Function Invocation -->
+
+	<!-- The code inside the function will execute when "something" invokes (calls) the function:
+	When an event occurs (when a user clicks a button)
+	When it is invoked (called) from JavaScript code
+	Automatically (self invoked) -->
+
+<!-- Function Return -->
+<!-- When JavaScript reaches a return statement, the function will stop executing.
+If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement
+Functions often compute a return value. The return value is "returned" back to the "caller": -->
+
+<!-- Why Functions? -->
+	<!-- With functions you can reuse code
+	You can write code that can be used many times.
+	You can use the same code with different arguments, to produce different results. -->

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Assignment</title>
+</head>
+<body>
+	<h1>JavaScript Assignment</h1>
+
+	<h3>The = Operator</h3>
+	<p>The Simple Assignment Operator assigns a value to a variable.</p>
+	<p>The = Operator</p>
+	<p id="ex"></p>
+	<br><hr>
+
+	<h3>The += Operator</h3>
+	<p>The Addition Assignment Operator adds a value to a variable.</p>
+	<p>The += Operator</p>
+	<p id="opera01"></p>
+	<p id="opera011"></p>
+	<br><hr>
+
+	<h3>The -= Operator</h3>
+	<p>The Subtraction Assignment Operator subtracts a value from a variable.</p>
+	<h3>The -= Operator</h3>
+	<p id="opera02"></p>
+	<br><hr>
+
+	<h3>The *= Operator</h3>
+	<p>The Multiplication Assignment Operator multiplies a variable.</p>
+	<p><h3>The *= Operator</h3></p>
+	<p id="opera03"></p>
+	<br><hr>
+
+	<h3>The **= Operator</h3>
+	<p>The Exponentiation Assignment Operator raises a variable to the power of the operand.</p>
+	<p>The **= Operator</p>
+	<p>let h = 10; h **= 3;</p>
+	<p id="opera04"></p>
+	<br><hr>
+
+	<h3>The /= Operator</h3>
+	<p>The Division Assignment Operator divides a variable.</p>
+	<p>The /= Operator</p>
+	<p>	let j = 60; j /= 10;</p>
+	<p id="opera05"></p>
+	<br><hr>
+
+	<h3>The %= Operator</h3>
+	<p>The Remainder Assignment Operator assigns a remainder to a variable.</p>
+	<p>The %= Operator</p>
+	<p>let k = 22; k %= 10;</p>
+	<p id="opera06"></p>
+	<br><hr>
+
+
+
+<script>
+	// The = Operator
+	let x = 50;
+	let y = 10 + x;
+	document.getElementById("ex").innerHTML = "Value of x is: " + y;
+
+	// The += Operator
+	let a = 10;
+	a += 15;
+	document.getElementById("opera01").innerHTML = "Value of a is: " + a;
+	let b = "hello";
+	b += " world;"
+	document.getElementById("opera011").innerHTML = b;
+
+	// The -= Operator
+	let c = 22;
+	c -= 12;
+	document.getElementById("opera02").innerHTML = c;
+
+	// The *= Operator 
+	let z = 10;
+	z *= 5;
+	document.getElementById("opera03").innerHTML = z;
+
+	// The **= Operator
+	let h = 10;
+	h **= 3;
+	document.getElementById("opera04").innerHTML = h;
+
+	// The /= Operator
+	let j = 60;
+	j /= 10;
+	document.getElementById("opera05").innerHTML = j;
+
+	// The %= Operator
+	let k = 22;
+	k %= 10;
+	document.getElementById("opera06").innerHTML = k;
+
+</script>
+</body>
+</html>

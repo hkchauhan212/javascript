@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Map Methods</title>
+</head>
+<body>
+	<h3>The new Map() Method</h3>
+	<p>You can create a map by passing an array to the new Map() constructor:</p>
+	<p>Creating a map from an array:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>Map.get()</h3>
+	<p>You get the value of a key in a map with the get() method</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>Map.set()</h3>
+	<p>You can add elements to a map with the set() method:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Map.size</h3>
+	<p>The size property returns the number of elements in a map:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>Map.delete()</h3>
+	<p>The delete() method removes a map element:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>Map.clear()</h3>
+	<p>The clear() method removes all the elements from a map:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>The map() Method</h3>
+	<p>The has() method returns true if a key exists in a map:</p>
+	<p id="demo07"></p>
+	<br>
+	<h3>The has() Method</h3>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>The forEach() Method</h3>
+	<p>The forEach() method invokes a callback for each key/value pair in a map:</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>Map.entries()</h3>
+	<p>The entries() method returns an iterator object with the [key,values] in a map:</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>The keys() Method</h3>
+	<p>The keys() method returns an iterator object with the keys in a map:</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>Map.values()</h3>
+	<p>The values() method returns an iterator object with the values in a map:</p>
+	<p id="demo12"></p>
+	<br>
+	<p>You can use the values() method to sum the values in a map:</p>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<h3>Objects as Keys</h3>
+	<p>Being able to use objects as keys is an important Map feature:</p>
+	<p id="demo14"></p>
+	<br><hr>
+
+	<h3>JavaScript Map.groupBy()</h3>
+	<p>ES2024 added the Map.groupBy() method to JavaScript.</p>
+	<p>The Map.groupBy() method groups elements of an object according to string values returned from a callback function.</p>
+	<p>The Map.groupBy() method does not change the original object.</p>
+	<p id="demo15"></p>
+
+<script>
+	// demo01	
+	// Create a Map
+	var fruits = new Map([
+	  	["apples", 500],
+	  	["bananas", 300],
+	  	["oranges", 200]
+	]);
+	let numb = fruits.get("apples");
+	document.getElementById("demo01").innerHTML = "There are " + numb + " apples.";
+
+	// demo02	
+	document.getElementById("demo02").innerHTML = fruits.get("apples");
+
+	// demo03
+	const fruits21 = new Map();
+	// set Mapp Vales
+	fruits21.set("apples", 500);
+	fruits21.set("bananas", 300);
+	fruits21.set("oranges", 200);
+	let numb01 = fruits21.get("apples");
+	document.getElementById("demo03").innerHTML = "there are " + numb01	+ "apples." ;
+
+	// demo04	
+	document.getElementById("demo04").innerHTML = fruits.size;
+
+	// demo05
+	fruits.delete("apples");
+	document.getElementById("demo05").innerHTML = fruits.size;
+
+	// demo06
+	fruits.clear();
+	document.getElementById("demo06").innerHTML = fruits.size;
+
+	// demo07
+	var fruits07 = new Map ([
+		["apples", 500],
+		["Banana", 700],
+		["Orange", 1000],
+		["Kivi", 600],
+		["Fiat", 1200]
+		])
+	document.getElementById("demo07").innerHTML = fruits07.has("apples")
+
+	// demo08
+	fruits07.delete("apples");
+	document.getElementById("demo08").innerHTML = fruits.has("Banana");
+
+	// demo09
+	let text01 = "";
+	fruits07.forEach(function(value, key) {
+		text01 += key + '=' + value + "<br>"
+	}) 
+	document.getElementById("demo09").innerHTML = text01;
+
+	// demo10
+	let text = "";
+	for (var s of fruits07.entries()) {
+		text += s + "<br>";
+	} 
+	document.getElementById("demo10").innerHTML =  text;
+
+	// demo11
+	let text11 = "";
+	for (var g of fruits07.keys()) {
+  		text11 += g + "<br>";
+	}
+	document.getElementById("demo11").innerHTML = text11;
+
+	// demo12
+	let text14 = "";
+	for (const b of fruits07.values()) {
+  		text14 += b + "<br>";
+	}
+	document.getElementById("demo12").innerHTML = text14;
+
+	// demo13
+	let total = 0;
+	for (const w of fruits07.values()) {
+	  	total += w;
+	}
+	document.getElementById("demo13").innerHTML = total;
+
+	// demo14
+	var apples = {name: 'Apples'};
+	var bananas = {name: 'Bananas'};
+	var oranges = {name: 'Oranges'};
+	var Kivi = {name: 'Kivi'};
+	// Create a Map
+	var fruits47 = new Map();
+	// Add the Objects to the Map
+	fruits47.set(apples, 500);
+	fruits47.set(bananas, 300);
+	fruits47.set(oranges, 200);
+	fruits47.set(Kivi, 400);
+	document.getElementById("demo14").innerHTML = fruits47.get(apples);
+	document.getElementById("demo14").innerHTML = fruits47.get("apples");
+
+</script>
+</body>
+</html>
+
+<!-- 
+Object.groupBy() vs Map.groupBy()
+The difference between Object.groupBy() and Map.groupBy() is:
+
+Object.groupBy() groups elements into a JavaScript object.
+
+Map.groupBy() groups elements into a Map object.
+ -->

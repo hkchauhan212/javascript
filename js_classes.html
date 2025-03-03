@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Classes</title>
+</head>
+<body>	
+	<h1>JavaScript Class Syntax</h1>
+	<p>Use the keyword class to create a class. Always add a method named constructor():</p>
+	<p><pre>
+	Syntax : 
+		class ClassName {
+  			constructor() { ... }
+		}
+
+		Example
+			class Car {
+  				constructor(name, year) {
+    			this.name = name;
+    			this.year = year;
+  				}
+			}
+	</pre></p>
+	<br><hr>
+
+	<p>Creating two car objects from a car class:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The Constructor Method & Class Methods</h3>
+	<pre>
+		Syntax
+			class ClassName {
+  			constructor() { ... }
+  			method_1() { ... }
+  			method_2() { ... }
+  			method_3() { ... }
+			}
+	</pre>
+	<p>How to define and use a Class method.</p>
+	<p id="demo02"></p>
+
+<script>
+	class Car {
+		constructor(name, year) {
+			this.name = name;
+			this.year = year;
+		}
+	}
+	var myCar1 = new Car("Ford", 2014);
+	var myCar2 = new Car("Audi", 2018);
+
+	document.getElementById("demo01").innerHTML = myCar1.name + " " + myCar2.name;	
+
+	// demo02
+	class Car07 {
+		constructor(name, year) {
+			this.name = name;
+			this.year = year;
+		}
+		age() {
+			var  date = new Date();
+			return date.getFullYear() - this.year;
+		}
+	}
+	const myCar07 = new Car07("Ford", 2014);
+	document.getElementById("demo02").innerHTML = "My car is " + myCar07.age() + " year old.";
+</script>
+</body>
+</html>	

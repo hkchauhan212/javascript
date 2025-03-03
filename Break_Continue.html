@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Break and Continue</title>
+</head>
+<body>
+	<h1>JavaScript Break and Continue</h1>
+	<p>The break statement "jumps out" of a loop.</p>
+	<p>The continue statement "jumps over" one iteration in the loop.</p>
+
+	<h3>The Break Statement</h3>
+	<p>You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch() statement.</p>
+	<p>The break statement can also be used to jump out of a loop:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The Continue Statement</h3>
+	<p>The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.</p>
+	<p>This example skips the value of 3:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>JavaScript Labels</h3>
+	<p>To label JavaScript statements you precede the statements with a label name and a colon:</p>
+	<p>The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.</p>
+	<p>break:  1> labelname; 2> continue labelname;</p>
+	<p>The continue statement (with or without a label reference) can only be used to skip one loop iteration.</p>
+	<p>The break statement, without a label reference, can only be used to jump out of a loop or a switch.</p>
+	<p>With a label reference, the break statement can be used to jump out of any code block:</p>
+	<p id="demo03"></p>
+
+<script>	
+	// demo01
+	let txt = "";
+	for (let i = 1; i <= 10; i++) {
+		if (i === 5) { break; }
+		txt += "The number is : " + i + "<br>";
+	}
+	document.getElementById("demo01").innerHTML = txt;	
+
+	// demo02
+	let text = "";
+	for (let h = 0; h < 10; h++) {
+		if (h === 3) { continue; }
+	  	text += "The number is " + h + "<br>";
+	}
+	document.getElementById("demo02").innerHTML = text;	
+
+	// demo03
+	const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let text07 = "";
+
+	list: {
+		text07 += cars[0] + "<br>"; 
+	  	text07 += cars[1] + "<br>"; 
+	  	break list;
+	  	text07 += cars[2] + "<br>"; 
+	  	text07 += cars[3] + "<br>"; 
+	}
+	document.getElementById("demo03").innerHTML = text07;
+</script>
+</body>
+</html>

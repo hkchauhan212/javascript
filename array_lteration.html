@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Array Iteration</title>
+</head>
+<body>
+	<h3>JavaScript Array forEach()</h3>
+	<p>Call a function once for each array element:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>JavaScript Array map()</h3>
+	<p>Create a new array by performing a function on each array element:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>JavaScript Array flatMap()</h3>
+	<p>the Array flatMap() method to JavaScript. The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>JavaScript Array filter()</h3>
+	<p>The filter() method creates a new array with array elements that pass a test. This example creates a new array from elements with a value larger than 18:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>JavaScript Array reduce()</h3>
+	<p>The reduce() method runs a function on each array element to produce (reduce it to) a single value. The reduce() method works from left-to-right in the array. See also reduceRight(). The reduce() method does not reduce the original array.</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript Array reduceRight()</h3>
+	<p>The reduceRight() method runs a function on each array element to produce (reduce it to) a single value. The reduceRight() works from right-to-left in the array. See also reduce().</p>
+	<p>Find the sum of all numbers in an array:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>JavaScript Array every()</h3>
+	<p>The every() method checks if all array values pass a test. This example checks if all array values are larger than 18</p>
+	<p>The every() method checks if all array values pass a test.</p>
+	<p id="demo07"></p>	
+	<br><hr>
+
+	<h3>JavaScript Array some()</h3>
+	<p>The some() method checks if some array values pass a test. This example checks if some array values are larger than 18:</p>
+	<p id="demo08"></p>	
+	<br><hr>
+
+	<h3>JavaScript Array.from()</h3>
+	<p>Return an array object from any object with a length property or any iterable object.</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>JavaScript Array keys()</h3>
+	<p>Return an Array Iterator object with the keys of the array:</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>JavaScript Array entries()</h3>
+	<p>entries() returns an Array Iterator object with key/value pairs:</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>JavaScript Array with() Method</h3>
+	<p> added the Array with() method as a safe way to update elements in an array without altering the original array.</p>
+	<p id="demo12"></p>
+	<br><hr>
+
+	<h3>JavaScript Array Spread (...)</h3>
+	<p>The "spread" operator spreads elements of iterable objects:</p>
+	<p id="demo13"></p>
+
+<script>
+	
+	// demo01
+	const number = [45, 15, 10, 5, 50, 78];
+	let txt = " ";
+	number.forEach(myFunction);
+	document.getElementById("demo01").innerHTML = txt;
+	function myFunction(value, index, array) {
+		txt += value + "<br>";
+	}
+
+	// demo02
+	const numbers1 = [45, 4, 9, 16, 25];
+	const numbers2 = numbers1.map(myFunction01);
+	document.getElementById("demo02").innerHTML = numbers2;
+	function myFunction01 (value, index, array){
+		return value * 2;
+	}
+
+	// demo03
+	const myArr = [1, 2, 3, 4, 5, 6];
+	const newArr = myArr.flatMap(x => [x, x *10]);
+	document.getElementById("demo03").innerHTML = newArr;
+
+	// demo04	
+	const numbers = [45, 4, 9, 16, 25];
+	const over18 = numbers.filter(myFunction02);
+	document.getElementById("demo04").innerHTML = over18;
+	function myFunction02(value, index, array){
+		return value > 18;
+	}
+
+	// demo05
+	let number07 = [45, 4, 9, 16, 25];
+	let sum = number07.reduce(myFunction03);
+	document.getElementById("demo05").innerHTML = "The sum is " + sum;
+	function myFunction03(total, value, index, array){
+		return total + value;
+	}
+
+	// demo06
+	let sum01 = number07.reduceRight(myFunction04);
+	document.getElementById("demo06").innerHTML = "The sum is " + sum01;
+	function myFunction04(total, value) {
+	// function myFunction04(total, value, index, array) {
+		return total + value;
+	}
+
+	// demo07	
+	let allOver18 = number07.every(myFunction05);
+	document.getElementById("demo07").innerHTML = "All over 18 is " + allOver18;
+	function myFunction05(value, index, array) {
+		return value > 18;
+	}
+
+	// demo08
+	let someOver18 = numbers.some(myFunction06);
+	document.getElementById("demo08").innerHTML = "some over 18 is " + someOver18;
+	function myFunction06(value, index, array){
+		return value > 18;
+	}
+
+	// demo09
+	const myArr01 = Array.from("ABCDEFG");
+	document.getElementById("demo09").innerHTML = myArr01;
+
+	// demo10
+	const fruits = ["Apple", "Banana", "Orange", "Kivi"];
+	let keys = fruits.keys();
+	let text = "";
+	for (let x of keys){
+		text += x + "<br>";
+	}
+	document.getElementById("demo10").innerHTML = text;
+
+	// demo11
+	const f = fruits.entries();
+
+	for (let x of f) {
+		document.getElementById("demo11").innerHTML += x  + "<br>";
+	}
+
+	// demo12
+	let months = ["Januar", "Fabruar", "Mar", "Aprill"];
+	let myMonths = months.with(2, "March");
+	document.getElementById("demo12").innerHTML = myMonths;
+
+	// demo13
+	let q1 = ["Jan", "Fab", "Mar"];
+	let q2 = ["Apr", "May", "Jun"];	
+	let q3 = ["Jula", "Aug", "Sep"];	
+	let q4 = ["Oct", "Nov", "Disa"];
+
+	let years = [...q1,...q2,...q3];
+	document.getElementById("demo13").innerHTML = years;	
+
+</script>
+</body>
+</html>
+
+<!-- 
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself
+ -->

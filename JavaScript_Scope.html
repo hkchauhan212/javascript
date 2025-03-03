@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Scope</title>
+</head>
+<body>
+
+	<h3>Block Scope</h3>
+	<p>Before ES6 (2015), JavaScript variables had only Global Scope and Function Scope.</p>
+	<p>ES6 introduced two important new JavaScript keywords: let and const.</p>
+	<p>These two keywords provide Block Scope in JavaScript.</p>
+	<p>Variables declared inside a { } block cannot be accessed from outside the block:</p>
+	<pre>
+		{
+	  		let x = 2;
+		}
+		// x can NOT be used here
+	</pre>
+	<p>Variables declared with the var keyword can NOT have block scope.</p>
+	<p>Variables declared inside a { } block can be accessed from outside the block.</p>
+	<pre>
+		{
+  			var x = 2;
+		}
+		// x CAN be used here
+	</pre>
+	<br><hr>
+
+	<h3>Local Scope & Function Scope</h3>
+	<p>Variables declared within a JavaScript function, are LOCAL to the function:</p>
+	<p id="demo01"></p>
+	<p id="demo02"></p>
+	<p><b>Local variables have Function Scope:</b></p>
+	<br><hr>
+
+	<h3>Global JavaScript Variables</h3>
+	<p>A variable declared outside a function, becomes GLOBAL.</p>
+	<p>A GLOBAL variable can be accessed from any script or function.</p>
+	<p id="demo03"></p>
+	<p><b>A global variable has Global Scope:</b></p>
+	<br><hr>
+
+	<h3>Global Scope</h3>
+	<pre>
+	Variables declared Globally (outside any function) have Global Scope.
+	Global variables can be accessed from anywhere in a JavaScript program.
+	Variables declared with var, let and const are quite similar when declared outside a block.
+	They all have Global Scope:
+
+	var x = 2;       // Global scope
+	let x = 2;       // Global scope
+	const x = 2;       // Global scope
+	</pre>
+	<br><hr>
+
+	<h3>JavaScript Variables</h3>
+	<p>In JavaScript, objects and functions are also variables.</p>
+	<br><hr>
+
+	<h3>Automatically Global</h3>
+	<p>If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable. This code example will declare a global variable carName, even if the value is assigned inside a function.</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<p><b>Strict Mode : </b> All modern browsers support running JavaScript in "Strict Mode".You will learn more about how to use strict mode in a later chapter of this tutorial.</p>
+	<br><hr>
+
+	<h3>Global Variables in HTML</h3>
+	<pre>
+	With JavaScript, the global scope is the JavaScript environment.
+	In HTML, the global scope is the window object.
+	Global variables defined with the var keyword belong to the window object:
+	</pre>
+	<p>In HTML, global variables defined with <b>var</b>, will become window variables.</p>
+	<p id="demo05"></p>
+	<p>Global variables defined with the let keyword do not belong to the window object:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<p><b>The Lifetime of JavaScript Variables : The lifetime of a JavaScript variable starts when it is declared. Function (local) variables are deleted when the function is completed.In a web browser, global variables are deleted when you close the browser window (or tab).</b></p>
+	<hr>
+
+<script>
+	// demo01
+	myFunction();
+	function myFunction() {
+		let carName = "Volvo";
+		document.getElementById("demo01").innerHTML = typeof carName + " " + carName;
+	}
+	document.getElementById("demo02").innerHTML = typeof carName;
+
+	// demo03
+	let carName01 = "volvo";
+	myFunction01();
+
+	function myFunction01() {
+		document.getElementById("demo03").innerHTML = "I can display " + carName01;
+	}
+
+	// demo04
+	myFunction02();
+	// code here can use carName as a global variable
+	document.getElementById("demo04").innerHTML = "I can display " + carName02;
+	function  myFunction02() {
+	 	carName02 = "VolVo";
+	}
+
+	// demo05
+	var carName07 = "VolVo";
+	// code here can use window.carName
+	document.getElementById("demo05").innerHTML = "I can display " + window.carName07;
+
+	// demo06
+	let carName11 = "VolVo";
+	document.getElementById("demo06").innerHTML = "I can not display " + window.carname11;
+</script>
+</body>
+</html>
+
+<!-- 
+Scope determines the accessibility (visibility) of variables.
+
+JavaScript variables have 3 types of scope:
+
+Block scope
+Function scope
+Global scope
+ -->

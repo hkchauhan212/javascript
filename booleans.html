@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Booleans</title>
+</head>
+<body>
+	<h1>JavaScript Booleans</h1>
+	<h3>A JavaScript Boolean represents one of two values: true or false.</h3>
+	<h3>The Boolean() Function</h3>
+	<p>You can use the Boolean() function to find out if an expression (or a variable) is true:</p>
+	<p>Display the value of Boolean(10 > 9):</p>
+	<p id="demo01"></p>
+	<br>
+	<p>Display the value of 10 > 9:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>Everything With a "Value" is True</h3>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Everything Without a "Value" is False</h3>
+	<p>Display the Boolean value of 0:</p>
+	<p id="demo04"></p>
+	<br>
+	<p>The Boolean value of -0 (minus zero) is false:</p>
+	<p id="demo05"></p>
+	<br>
+	<p>The Boolean value of "" (empty string) is false:</p>
+	<p id="demo06"></p>
+	<br>
+	<p>The Boolean value of undefined is false:</p>
+	<p id="demo07"></p>
+	<br>
+	<p>The Boolean value of null is false:</p>
+	<p id="demo08"></p>
+	<br>
+	<p>The Boolean value of false is (you guessed it) false:</p>
+	<p id="demo09"></p>
+	<br>
+	<p>The Boolean value of NaN is false:</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>JavaScript Booleans as Objects</h3>
+	<p>Normally JavaScript booleans are primitive values created from literals:</p>
+	<p>Booleans and Boolean objects cannot be safely compared:</p>
+	<p id="demo11"></p>
+	<p>When using the == operator, x and y are equal:</p>
+	<p id="demo12"></p>
+	<p>When using the === operator, x and y are not equal:</p>
+	<p id="demo13"></p>
+	<br><hr>
+	<p><b>Note: </b>Comparing two JavaScript objects always return false.</p>
+
+<script>
+	// demo01
+	document.getElementById("demo01").innerHTML = Boolean(10 > 9);
+
+	// demo02
+	document.getElementById("demo02").innerHTML = 10 > 9;
+
+	// demo03
+	document.getElementById("demo03").innerHTML = 
+	"100 is " + Boolean(100) + "<br>" + 
+	"3.14 is " + Boolean(3.14) + "<br>" + 
+	"-15 is " + Boolean(-15) + "<br>" +
+	"Any (not empty) string is " + Boolean("Hello") + "<br>" + 
+	"Even the string  'false' is " + Boolean('false') + "<br>" + 
+	"Any expression (expect Zero) is " + Boolean(1 + 3 + 3.14);
+
+	// demo04
+	var x = 0;
+	document.getElementById("demo04").innerHTML = Boolean(x);
+
+	// demo05	
+	var x = -0;
+	document.getElementById("demo05").innerHTML = Boolean(x);
+
+	// demo06
+	var x = "";
+	document.getElementById("demo06").innerHTML = Boolean(x);
+
+	// demo07
+	var x;
+	document.getElementById("demo07").innerHTML = Boolean(x);
+
+	// demo08
+	var x = null;
+	document.getElementById("demo08").innerHTML = Boolean(x);
+
+	// demo09
+	var x = false;
+	document.getElementById("demo09").innerHTML = Boolean(x);
+
+	// demo10
+	var x = 10 / "Hallo";
+	document.getElementById("demo10").innerHTML = Boolean(x);
+
+	// demo11
+	// x is boolean
+	var x = false;
+
+	// y is pbject
+	var y = new Boolean(false);
+	document.getElementById("demo11").innerHTML = typeof x + "<br>" + typeof y;
+ 	
+ 	// demo12
+ 	document.getElementById("demo12").innerHTML = (x == y);
+
+ 	// demo13
+ 	document.getElementById("demo13").innerHTML = (x === y);
+
+
+</script>
+</body>
+</html>
+
+<!-- 
+Boolean Values
+
+Very often, in programming, you will need a data type that can only have one of two values, like
+YES / NO
+ON / OFF
+TRUE / FALSE
+For this, JavaScript has a Boolean data type. It can only take the values true or false.
+
+Comparisons and Conditions
+
+Operator	Description		Example
+==			equal to		if (day == "Monday")
+>			greater than	if (salary > 9000)
+<			less than		if (age < 18)
+
+
+
+
+ -->

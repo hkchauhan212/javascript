@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript JSON</title>
+</head>
+<body>
+	<p>JSON is a format for storing and transporting data.</p>
+	<p>JSON is often used when data is sent from a server to a web page.</p>
+
+	<pre>
+		{
+		"employees":[
+  			{"firstName":"John", "lastName":"Doe"},
+			{"firstName":"Anna", "lastName":"Smith"},
+			{"firstName":"Peter", "lastName":"Jones"}
+			]
+		}
+
+		JSON Syntax Rules
+			Data is in name/value pairs
+			Data is separated by commas
+			Curly braces hold objects
+			Square brackets hold arrays
+	</pre>
+
+	<h2>Create Object from JSON String</h2>
+	<p id="demo01"></p>
+
+<script>
+	let text =  '{"employees":[ ' + 
+		'{ "firstName": "John", "lastName":"Doe"}, ' +
+		'{ "firstName": "Khajur", "lastName":"Bhai"},  '+
+		'{ "firstName": "mhatma", "lastName":"gandhi"}]}';	
+	let obj = JSON.parse(text);
+	document.getElementById("demo01").innerHTML = obj.employees[1].firstName + " " + obj.employees[1].lastName; 
+</script>
+</body>
+</html>

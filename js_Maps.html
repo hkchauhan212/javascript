@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Maps</title>
+</head>
+<body>
+	<h1>JavaScript Maps</h1>
+	<h3>How to Create a Map</h3>
+	<p><pre>	
+	You can create a JavaScript Map by:
+	Passing an Array to new Map()
+	Create a Map and use Map.set()
+	</pre></p>
+	<br><hr>
+
+	<h3>The new Map() Method</h3>
+	<p>You can create a Map by passing an Array to the new Map() constructor:</p>
+	<p>Creating a map from an array:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The set() Method</h3>
+	<p>You can add elements to a Map with the set() method:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>The get() Method</h3>
+	<p>The get() method gets the value of a key in a Map:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Maps are Objects</h3>
+	<p>typeof returns object:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+<script>
+	// demo01
+	// create a Map 
+	var fruits = new Map ([
+		["Apple", 500],
+		["Banana", 1500],
+		["Orange", 750]
+		]);
+	var numb = fruits.get("Banana");
+	document.getElementById("demo01").innerHTML = "There are " + numb + " Banana.";
+	
+	// demo02
+	// Create a Map
+	const fruits01 = new Map();
+	// Set Map Values
+	fruits01.set("apples", 500);
+	fruits01.set("bananas", 300);
+	fruits01.set("oranges", 200);
+	let numb01 = fruits01.get("apples");
+	document.getElementById("demo02").innerHTML = "There are " + numb01 + "apples.";
+
+	// demo03
+	document.getElementById("demo03").innerHTML = fruits.get("Apple");
+
+	// demo04
+	document.getElementById("demo04").innerHTML = typeof fruits;
+</script>
+</body>
+</html>
+
+<!-- 
+A Map holds key-value pairs where the keys can be any datatype.
+A Map remembers the original insertion order of the keys.
+	
+
+Object								Map
+Not directly iterable				Directly iterable
+Do not have a size property			Have a size property
+Keys must be Strings (or Symbols)	Keys can be any datatype
+Keys are not well ordered			Keys are ordered by insertion
+Have default keys					Do not have default keys
+ -->

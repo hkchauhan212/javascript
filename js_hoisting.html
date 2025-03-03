@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Hoisting</title>
+</head>
+<body>
+	<h1>JavaScript Hoisting</h1>
+	<p>Hoisting is JavaScript's default behavior of moving declarations to the top.</p>
+	<h3>JavaScript Declarations are Hoisted</h3>
+	<p>In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared. Example 1 gives the same result as Example 2:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The let and const Keywords</h3>
+	<p>Variables defined with let and const are hoisted to the top of the block, but not initialized.Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.Using a let variable before it is declared will result in a ReferenceError.The variable is in a "temporal dead zone" from the start of the block until it is declared:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>JavaScript Initializations are Not Hoisted</h3>
+	<p id="demo04"></p>
+
+<script>
+	// demo01
+	x = 5; // Assign 5 to x
+	parth = document.getElementById("demo01"); // Find an element
+	parth.innerHTML = x;         // Display x in the element
+
+	// demo03
+	try{
+		CarName = "Saab";
+		// let CarName = "VolVo";
+		const CarName = "VolVo";
+	}
+	catch(err) {
+		document.getElementById("demo03").innerHTML = err;
+	}
+
+	// demo04
+	var a = 5;
+	var b = 7;
+	radhe = document.getElementById("demo04");
+	radhe.innerHTML = a = " " + b ;
+</script>	
+</body>
+</html>

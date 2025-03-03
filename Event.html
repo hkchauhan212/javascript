@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Event</title>
+</head>
+<body>
+	<h1>JavaScript HTML Events</h1>
+	<p><b>The onclick Attribute<b></p>
+	<p>onclick="document.getElementById('demo01').innerHTML = Date()"</p>
+	<button type="button" onclick="document.getElementById('demo01').innerHTML = Date()">The time is!</button>
+	<p id="demo01"></p>
+	<hr>
+
+	<p>In the next example, the code changes the content of its own element (using this.innerHTML):</p>
+	<p>onclick="this.innerHTML=Date()"</p>
+	<button type="button" onclick="this.innerHTML=Date()">The time is</button>
+	<hr>
+
+	<p>JavaScript code is often several lines long. It is more common to see event attributes calling functions:</p>
+	<p>STAP 1: onclick="DisplayDate()"</p>
+	<p>STAP 2: function DisplayDate() { document.getElementById("demo03").innerHTML = Date();}</p>
+	<button type="button" onclick="DisplayDate()">The time is</button>
+	<p id="demo03"></p>
+	<hr>
+
+	<p> Here, we will display a message in the alert box when the button is clicked using onClick() event. This HTML document features a button styled to appear in the middle of the page. When clicked, the button triggers the `hiThere()` JavaScript function, which displays an alert box with the message “Hi there!”.</p>
+	<button type="button" onclick="hiThere()">Alert Event</button>
+	<hr>
+
+	<h4>The input box will change color when UP arrow key is pressed</h4>
+    <input id="bg" onkeyup="changeBackground()" placeholder="write something" style="color:#fff">
+
+
+
+<script>
+	function DisplayDate() {
+		document.getElementById("demo03").innerHTML = Date();
+	}
+
+	// Aler Events
+	function hiThere (){
+		alert('Hi There!')
+	}
+
+
+	let a=0;
+    let b=0;
+    let c=0;
+    function changeBackground() {
+        let x=document.getElementById('bg');
+        x.style.backgroundColor='rgb('+a+', '+b+', '+c+')';
+            a+=100;
+            b+=a+50;
+            c+=b+70;
+            if(a>255) a=a-b;
+            if(b>255) b=a;
+            if(c>255) c=b;
+        }
+</script>
+</body>
+</html>

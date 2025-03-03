@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Const</title>
+</head>
+<body>	
+
+	<h2>Constant Arrays</h2>
+	<p>Declaring a constant array does NOT make the elements unchangeable:</p>
+	<p id="demo"></p>
+	<br><hr><br>
+
+	<p>You can NOT reassign a constant array:</p>
+	<p id="$demo"></p>
+	<br><hr><br>
+
+	<p>Declaring a constant object does NOT make the objects properties unchangeable:</p>
+	<p id="car"></p>
+	<br><hr><br>
+
+	<p>You can NOT reassign a constant object:</p>
+	<p id="$car"></p>
+	<br><hr><br>
+
+
+<script>
+	// create an array:
+	const cars =["mustang", "Volvo", "BMW"];
+	// change an element
+	cars[0] = "Toyota";
+	// Add an element:
+	cars.push("Audi");
+	// Display the Array
+	document.getElementById("demo").innerHTML = cars;
+
+	// You can NOT reassign a constant array:
+	try {
+  	const cars = ["Saab", "Volvo", "BMW"];
+  	cars = ["Toyota", "Volvo", "Audi"];
+	}
+	catch (err) {
+  	document.getElementById("$demo").innerHTML = err;
+	}
+
+	// Declaring a constant object does NOT make the objects properties unchangeable
+	// create an object
+	const name = {type:"Fiat", model:"500", color:"white"};
+	// change property
+	car.color = "red"
+	// Add a property
+	car.owner = "Johnson"
+	// Display the property
+	document.getElementById("car").innerHTML =  "car owner is :" + car.owner + "car color is " + car.color ;
+
+	// But you can NOT reassign the object:
+	try{
+		const car = {type:"Fiat", model:"500", color:"white"}
+		car = {type:"Volvo", model:"EX60", color:"red"}
+	}
+	catch (err) {
+		document.getElementById("$car").innerHTML = err; 
+	}
+</script>
+</body>
+</html>
+
+<!-- When to use JavaScript const?
+Always declare a variable with const when you know that the value should not be changed.
+Use const when you declare:
+	A new Array
+	A new Object
+	A new Function
+	A new RegExp -->
+
+<!-- Redeclaring -->
+<!-- 		var x = 2;     // Allowed
+		const x = 2;   // Not allowed
+
+	{
+		let x = 2;     // Allowed
+		const x = 2;   // Not allowed
+	}
+
+	{
+		const x = 2;   // Allowed
+		const x = 2;   // Not allowed
+	} -->
+
+	<!-- const x = 2;     // Allowed
+	x = 2;           // Not allowed
+	var x = 2;       // Not allowed
+	let x = 2;       // Not allowed
+	const x = 2;     // Not allowed
+
+	{
+  		const x = 2;   // Allowed
+  		x = 2;         // Not allowed
+  		var x = 2;     // Not allowed
+  		let x = 2;     // Not allowed
+  		const x = 2;   // Not allowed
+	} -->
+
+	<!-- const x = 2;       // Allowed
+
+	{
+  		const x = 3;   // Allowed
+	}
+
+	{
+  		const x = 4;   // Allowed
+	} -->

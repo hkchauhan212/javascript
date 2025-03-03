@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Arithmetic</title>
+</head>
+<body>
+
+	<h1>JavaScript Arithmetic:</h1>
+
+	<!-- Example -->
+	<p>A typical arithmetic operation takes two numbers and produces a new number.</p>
+	<p id="demo01"></p>
+	<hr>
+	<p>A typical arithmetic operation takes two numbers (or variables) and produces a new number.</p>
+	<p id="demo02"></p>
+	<hr>
+	<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+	<p id="demo03"></p>	
+	<br><hr><br>
+
+	<h3>Addition</h3>
+	<p>The addition operator (+) adds numbers:</p>
+	<p>The + Operator</p>
+	<p id="add"></p>
+	<br><hr>
+
+	<h3>Subtracting</h3>
+	<p>The subtraction operator (-) subtracts numbers.</p>
+	<p>The - Operator</p>
+	<p id="sub"></p>
+	<br><hr>
+
+	<h3>Multiplying</h3>
+	<p>The multiplication operator (*) multiplies numbers.</p>
+	<p>The * Operator</p>
+	<p id="multi"></p>
+	<br><hr>
+
+	<h3>Dividing</h3>
+	<p>The division operator (/) divides numbers.</p>
+	<p>The / Operator</p>
+	<p id="divid"></p>
+	<br><hr>
+
+	<h3>Remainder</h3>
+	<p>The modulus operator (%) returns the division remainder.</p>
+	<p>The % Operator</p>
+	<p> let hery10 = 14; let hery11 = 5 ; let hery12 = hery10 % hery11; </p>
+	<p id="remain"remain></p>
+	<br><hr>
+
+	<h3>Incrementing</h3>
+	<p>The increment operator (++) increments numbers.</p>
+	<p>The ++ Operator</p>
+	<p id="incre"></p>
+	<br><hr>
+
+	<h3>Decrementing</h3>
+	<p>The decrement operator (--) decrements numbers.</p>
+	<p>The -- Operator</p>
+	<p id="decrem"></p>
+	<br><hr>
+
+	<h3>Exponentiation</h3>
+	<p>The exponentiation operator (**) raises the first operand to the power of the second operand.</p>
+	<p>The ** Operator 5 ** 3</p>
+	<p id="expo"></p>
+	<br><hr>
+
+	<h3>Operator Precedence</h3>
+	<p>Operator precedence describes the order in which operations are performed in an arithmetic expression.</p>
+	<p>Multiplication has precedence over addition.</p>
+	<p>100 + 50 * 3</p>
+	<p id="pre"></p>
+
+
+<script>
+	// Ex 01
+	let x = 5 + 5;
+	document.getElementById("demo01").innerHTML = x;
+
+	// Ex 02
+	let y = 5;
+	let z = 9;
+	let l = y + z;
+	document.getElementById("demo02").innerHTML = l;
+
+	// Ex 03
+	let a = 5;
+	let b = (100 + 50) * a;
+	document.getElementById("demo03").innerHTML = b;
+
+	// Addition
+	let h = 7;
+	let j = 9;
+	let k = h + j;
+	document.getElementById("add").innerHTML = k;
+
+	// Subtracting
+	let i = 55;
+	let n = 15;
+	let g = i - n;
+	document.getElementById("sub").innerHTML = g;
+
+	// Multiplying
+	let m = 5;
+	let u = 9;
+	let r = m * u;
+	document.getElementById("multi").innerHTML = r;
+
+	// Dividing
+	let hery01 = 50;
+	let hery02 = 10;
+	let hery03 = hery01 / hery02;
+	document.getElementById("divid").innerHTML = hery03;
+
+	// Remaind
+	let hery10 = 14;
+	let hery11 = 5;
+	let hery12 = hery10 % hery11;
+	document.getElementById("remain").innerHTML = hery12;
+
+	// Incrementing
+	let s = 10;
+	s++;
+	let d = s;
+	document.getElementById("incre").innerHTML = d;
+
+	// Decrementing
+	let dec01 = 10;
+	dec01 --;
+	let dec02 = dec01;
+	document.getElementById("decrem").innerHTML = dec02;
+
+	// Exponentiation
+	let de = 5;
+	document.getElementById("expo").innerHTML = de ** 3;
+
+	// Operator Precedence
+	document.getElementById("pre").innerHTML = 100 + 50 * 3;
+
+</script>
+</body>
+</html>
+
+<!-- Operators and Operands -->
+
+<!-- The numbers (in an arithmetic operation) are called operands.
+The operation (to be performed between the two operands) is defined by an operator. -->
+
+	<!-- 100 is operand
+		+ is Operator
+		50 is operand -->
+
+<!-- Is the result of example above the same as 150 * 3, or is it the same as 100 + 150
+	Is the addition or the multiplication done first?
+	As in traditional school mathematics, the multiplication is done first.
+	Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).
+	And (as in school mathematics) the precedence can be changed by using parentheses.
+	When using parentheses, the operations inside the parentheses are computed first: -->

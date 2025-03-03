@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Comparison and Logical Operators</title>
+</head>
+<body>
+	<h1>JavaScript Comparison and Logical Operators</h1>
+	<h3>Comparison and Logical operators are used to test for true or false.</h3>
+	<h3>Comparison Operators</h3>
+	<h3>== equal to</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x == 8):</p>
+	<p id="demo01"></p>
+	<p>Assign 5 to x, and display the value of the comparison (x == 5):</p>
+	<p id="demo02"></p>
+	<p>Assign 5 to x, and display the value of the comparison (x == 5):</p>
+	<p id="demo03"></p>
+	<br><hr>
+	
+	<h3>=== equal value and equal type</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x === 5):</p>
+	<p id="demo04"></p>
+	<p>Assign 5 to x, and display the value of the comparison (x === "5").</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>The != Operator: not equal</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x != 8).</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>The !== Operator: not equal value or not equal type</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x !== 5):</p>
+	<p id="demo07"></p>
+	<p>Assign 5 to x, and display the value of the comparison (x !== "5"):</p>
+	<p id="demo08"></p>
+	<p>Assign 5 to x, and display the value of the comparison (x !== 8):</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>The > Operator: greater than</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x > 8).</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>The < Operator: less than</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x < 8).</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>>=  greater than or equal to</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x >= 8).</p>
+	<p id="demo12"></p>
+	<br><hr>
+
+	<h3><= less than or equal to</h3>
+	<p>Assign 5 to x, and display the value of the comparison (x <= 8).</p>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<h3>Logical Operators</h3>
+	<p>Logical operators are used to determine the logic between variables or values. Given that x = 6 and y = 3, the table below explains the logical operators:</p>
+	<h3>&& and</h3>
+	<p>The && operator returns true if both expressions are true, otherwise it returns false.</p>
+	<p id="demo14"></p>
+	<br><hr>
+
+	<h3>The || Operator (Logical OR)</h3>
+	<p>The || returns true if one or both expressions are true, otherwise it returns false.</p>	
+	<p id="demo15"></p>
+	<br><hr>
+
+	<h3>Conditional (Ternary) Operator</h3>
+	<p>JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.</p>
+	<p> <b>Syntax: </b> variablename = (condition) ? value1:value2 </p>
+	<p>Input your age and click the button:</p>
+	<input id="age" value="18" />
+	<button onclick="myFunction()">Try it</button>
+	<p id="demo16"></p>
+	<br><hr>
+
+	<h3>Comparing Different Types</h3>
+	<p>Comparing data of different types may give unexpected results.</p>
+	<p>When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. An empty string converts to 0. A non-numeric string converts to NaN which is always false.</p>
+	<p>2 < 12 :</p>
+	<p id="demo17"></p>
+	<p>2 < "12" :</p>
+	<p id="demo18"></p>
+	<p>2 < "KhajurBhai" :</p>
+	<p id="demo19"></p>
+	<p>2 > "KhajurBhai" :</p>
+	<p id="demo20"></p>
+	<p>2 == "KhajurBhai" :</p>
+	<p id="demo21"></p>
+	<p>"2" < "12" :</p>
+	<p id="demo22"></p>
+	<p>"2" > "12" :</p>
+	<p id="demo23"></p>
+	<p>"2" == "12" :</p>
+	<p id="demo24"></p>
+	<p>When comparing two strings, "2" will be greater than "12", because (alphabetically) 1 is less than 2.</p>
+	<br><hr>
+
+	<h3>The ?. Operator</h3>
+	<p>The ?. operator returns undefined if an object is undefined or null (instead of throwing an error).</p>
+	<p>Car name is:</p>
+	<p id="demo25"></p>
+	<br><hr>
+
+
+<script>
+	// demo01
+	let x = 5;
+	document.getElementById("demo01").innerHTML = (x == 8);
+
+	// demo02
+	document.getElementById("demo02").innerHTML = (x == 5);
+
+	// demo03
+	document.getElementById("demo03").innerHTML = (x == "5");
+
+	// demo04
+	document.getElementById("demo04").innerHTML = (x === 5);
+
+	// demo05
+	document.getElementById("demo05").innerHTML = (x === "5");
+
+	// demo06
+	document.getElementById("demo06").innerHTML = (x != 7);
+
+	// demo07
+	document.getElementById("demo07").innerHTML = (x !== 5);
+	
+	// demo08
+	document.getElementById("demo08").innerHTML = (x !== "5");
+
+	// demo09
+	document.getElementById("demo09").innerHTML = (x !== 9);
+
+	// demo10
+	document.getElementById("demo10").innerHTML = (x > 8);
+
+	// demo11
+	document.getElementById("demo11").innerHTML = (x < 8);
+
+	// demo12
+	document.getElementById("demo12").innerHTML = (x >= 8);
+
+	// demo13
+	document.getElementById("demo13").innerHTML = (x <= 8);
+
+	// demo14
+	let a = 6;
+	let b = 3;
+	document.getElementById("demo14").innerHTML = (a < 10 && b > 1) + "<br>" + (a < 10 && b < 1);
+
+	// demo15
+	document.getElementById("demo15").innerHTML = 
+	(a == 5 || b == 5) + "<br>" + 
+	(a == 6 || b == 0) + "<br>" +
+	(a == 0 || b == 3) + "<BR>" + 
+	(a == 6 || b == 3);
+
+	// demo16
+	function myFunction () {
+		let age = document.getElementById("age").value;
+		let voteable  = (age < 18) ? " You are A Young man Some waiting for This Movment ":" You can marrid life live ";
+		document.getElementById("demo16").innerHTML = voteable;
+	}
+
+	// demo17
+	document.getElementById("demo17").innerHTML = 2 < 12;
+
+	// demo18
+	document.getElementById("demo18").innerHTML = 2 < "12";
+
+	// demo19
+	document.getElementById("demo19").innerHTML = 2 < "KhajurBhai";
+
+	// demo20
+	document.getElementById("demo20").innerHTML = 2 > "KhajurBhai";
+
+	// demo21
+	document.getElementById("demo21").innerHTML = 2 == "KhajurBhai";
+
+	// demo22
+	document.getElementById("demo22").innerHTML = "2" < "12";
+
+	// demo23
+	document.getElementById("demo23").innerHTML = "2" > "12";
+
+	// demo24
+	document.getElementById("demo24").innerHTML = "2" == "12";
+
+	// demo25
+	let cars = {type: "Mustang GT", model: "500", color: "White"}
+	let name = cars?.type;
+	document.getElementById("demo25").innerHTML = name;
+</script>
+</body>
+</html>
+
+<!-- 
+How Can it be Used
+
+Comparison operators can be used in conditional statements to compare values and take action depending on the result:
+if (age < 18) text = "Too young to buy alcohol";
+You will learn more about the use of conditional statements in the next chapter of this tutorial.
+ -->

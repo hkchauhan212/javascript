@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Sorting Arrays</title>
+</head>
+<body>
+	<h1>JavaScript Sorting Arrays</h1>
+	<h3>Sorting an Array</h3>
+	<p>The sort() method sorts an array alphabetically:</p>
+	<p id="demo01"></p>
+	<p id="demo02"></p>
+	<br>
+	<p>Reversing an Array</p>
+	<p>The reverse() method reverses the elements in an array:</p>
+	<p id="demo03"></p>
+	<p id="demo04"></p>	
+	<br><hr>
+
+	<h3>JavaScript Array toSorted() Method</h3>
+	<p>added the toSorted() method as a safe way to sort an array without altering the original array.</p>
+	<p>The difference between toSorted() and sort() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript Array toReversed() Method</h3>
+	<p>the toReversed() method as a safe way to reverse an array without altering the original array.</p>
+	<p>The difference between toReversed() and reverse() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>Numeric Sort</h3>
+	<p>Sort the array in ascending order:</p>
+	<p id="demo07"></p>
+	<p id="demo08"></p>
+	<br>
+	<p>Sort the array in descending order:</p>
+	<p id="demo09"></p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>The Compare Function</h3>
+	<p>Click the buttons to sort the array alphabetically or numerically.</p>
+	<button type="button" onclick="myFunction01()">Sort Alphabetically</button>
+	<button type="button" onclick="myFunction02()">Sort Numerically</button>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>Sorting an Array in Random Order</h3>
+	<p>Click the button (again and again) to sort the array in random order.</p>
+	<button type="button" onclick="myFunction03()">Try it</button>
+	<p id="demo12"></p>
+	<br><hr>
+
+	<h3>The Fisher Yates Method</h3>
+	<p>Click the button (again and again) to sort the array in random order.</p>
+	<button onclick="myFunction04()">Try it</button>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<h3>Find the Lowest (or Highest) Array Value</h3>
+	<p>const points10 = [40, 100, 1, 5, 25, 10];</p>
+	<p>The lowest number is <span id="demo14"></span>.</p>
+	<br>
+	<p>The highest number is <span id="demo15"></span>.</p>
+	<br><hr>
+
+	<h3>Using Math.min() on an Array</h3>
+	<p>You can use Math.min.apply to find the lowest number in an array:</p>
+	<p>The lowest number is <span id="demo16"></span>.</p>
+	<br>	
+	<h3>Using Math.max() on an Array</h3>
+	<p>You can use Math.max.apply to find the highest number in an array:</p>
+	<p>The highest number is <span id="demo17"></span>.</p>
+	<br><hr>
+
+	<h3>JavaScript Array Minimum Method</h3>
+	<p>The lowest number is <span id="demo18"></span>.</p>
+	<br><hr>
+
+	<h3>JavaScript Array Maximum Method</h3>
+	<p>The highest number is <span id="demo19"></span>.</p>
+	<br><hr>
+
+	<h3>Sorting Object Arrays</h3>
+	<p>Sort car objects on age:</p>
+	<p id="demo20"></p>
+	<br><hr>
+
+	<h3>Stable Array sort()</h3>
+	<p>revised the Array sort() method. Before 2019, the specification allowed unstable sorting algorithms such as QuickSort. After ES2019, browsers must use a stable sorting algorithm:When sorting elements on a value, the elements must keep their relative position to other elements with the same value.</p>
+	<p id="demo21"></p>
+
+<script>
+	// demo01
+	let fruits = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("demo01").innerHTML = fruits;
+	fruits.sort();
+	document.getElementById("demo02").innerHTML = fruits;
+
+	// demo03
+	document.getElementById("demo03").innerHTML = fruits;
+	fruits.reverse();
+	document.getElementById("demo04").innerHTML = fruits;
+
+	// demo05
+	let month = ["Jan", "Fab", "March", "Apr", "May", "Jun"];
+	let sorted = month.toSorted();
+	document.getElementById("demo05").innerHTML = sorted;
+
+	// demo06
+	let reverse = month.toReversed();
+	document.getElementById("demo06").innerHTML = reverse;
+
+	// demo07
+	let points = [40, 100, 1, 5, 25, 10];;
+	document.getElementById("demo07").innerHTML = points;
+	points.sort(function(a, b){return a - b});
+	document.getElementById("demo08").innerHTML = points;
+
+	// demo09
+	document.getElementById("demo09").innerHTML = points;
+	points.sort(function(a, b){return b - a});
+	document.getElementById("demo10").innerHTML = points;
+
+	// demo11
+	const points07 = [40, 100, 1, 5, 25, 10];;
+	document.getElementById("demo11").innerHTML = points07;
+
+	function myFunction01(){
+		points07.sort();
+		document.getElementById("demo11").innerHTML = points07;
+	}
+
+	function myFunction02(){
+		points07.sort(function(a, b){return a - b});
+		document.getElementById("demo11").innerHTML = points07;
+	}
+
+	// demo12
+	const points10 = [40, 100, 1, 5, 25, 10];
+	document.getElementById("demo12").innerHTML = points10;
+
+	function myFunction03(){
+		points10.sort(function(){return 0.5 - Math.random()});
+		document.getElementById("demo12").innerHTML = points10;
+	}
+
+	// demo13	
+	const points15 = [40, 100, 1, 5, 25, 10];;
+	document.getElementById("demo13").innerHTML = points15;
+	function myFunction04(){
+		for (let i = points15.length -1; i > 0; i--) {
+			let j = Math.floor(Math.random() * (i+1));
+    		let k = points[i];
+   		 	points[i] = points[j];
+    		points[j] = k;
+		}
+	}
+
+	// demo14	
+	points15.sort(function(a, b){return a-b});
+	document.getElementById("demo14").innerHTML = points15[0];
+
+	// demo15
+	points15.sort(function(a, b){return b-a});
+	document.getElementById("demo15").innerHTML = points15[0];
+
+	// demo16
+	document.getElementById("demo16").innerHTML = myArrayMin(points15);
+
+	function myArrayMin(arr){
+		return Math.min.apply(null, arr);
+	}
+
+	// demo17
+	document.getElementById("demo17").innerHTML = myArrayMax(points15);
+	function myArrayMax(arr){
+		return Math.max.apply(null, arr);
+	}
+
+	// demo18
+	document.getElementById("demo18").innerHTML = myArrayMin01(points15);
+	function myArrayMin01(arr){
+		let len = arr.length;
+  		let min = Infinity;
+  		while (len--) {
+    	if (arr[len] < min) {
+      		min = arr[len];
+    		}
+  		}
+  		return min;
+	}
+
+	// demo19
+	document.getElementById("demo19").innerHTML = myArrayMax01(points15)
+	function myArrayMax01(arr) {
+  	let len = arr.length;
+  	let max = -Infinity;
+  	while (len--) {
+    if (arr[len] > max) {
+    	max = arr[len];
+    	}
+  	}
+  	return max;
+	}
+
+	// demo20
+	const cars = [
+		{type: "Volvo", year:2016},
+		{type: "Saab", year:2001},
+		{type: "BMW", year:2010}
+	];
+	displayCars();
+
+	cars.sort(function (a, b){return a.year - b.year});
+	displayCars();
+
+	function displayCars(){
+		document.getElementById("demo20").innerHTML = 
+		cars[0].type + " " + cars[0].year + "<br>" + 
+		cars[1].type + " " + cars[1].year + "<br>" + 
+		cars[2].type + " " + cars[2].year ;
+ 	}
+
+ 	// demo21
+ 	const myArr =  [
+	  	{name:"X00",price:100 },
+	  	{name:"X01",price:100 },
+	  	{name:"X02",price:100 },
+	  	{name:"X03",price:100 },
+	  	{name:"X04",price:110 },
+	  	{name:"X05",price:110 },
+	  	{name:"X06",price:110 },
+	  	{name:"X07",price:110 },
+	  	{name:"X08",price:120 },
+	  	{name:"X09",price:120 },
+	  	{name:"X10",price:120 },
+	  	{name:"X11",price:120 },
+	  	{name:"X12",price:130 },
+	  	{name:"X13",price:130 },
+	  	{name:"X14",price:130 },
+	  	{name:"X15",price:130 },
+	  	{name:"X16",price:140 },
+	  	{name:"X17",price:140 },
+	  	{name:"X18",price:140 },
+	  	{name:"X19",price:140 }
+	];
+ 	myArr.sort( (p1, p2) => {
+  	if (p1.price < p2.price) return -1;
+  	if (p1.price > p2.price) return 1;
+  		return 0;
+	});
+
+	let txt = "";	
+	myArr.forEach(myFunction05);
+
+	function myFunction05(value) {
+  		txt += value.name + " " + value.price + "<br>"; 
+	}
+	document.getElementById("demo21").innerHTML = txt;
+</script>
+</body>
+</html>
+
+<!-- 
+Array Sort Methods
+
+Alphabetic Sort :
+
+Array sort()
+Array reverse()
+Array toSorted()
+Array toReversed()
+Sorting Objects
+
+See Also:
+
+Basic Methods
+Search Methods
+Iteration Methods
+
+Numeric Sort
+
+Numeric Sort
+Random Sort
+Math.min()
+Math.max()
+Home made Min()
+Home made Max()
+
+Numeric Sort:
+
+By default, the sort() function sorts values as strings.
+This works well for strings ("Apple" comes before "Banana").
+If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+You can fix this by providing a compare function:
+
+Find the Lowest (or Highest) Array Value
+
+There are no built-in functions for finding the max or min value in an array.
+To find the lowest or highest value you have 3 options:
+Sort the array and read the first or last element
+Use Math.min() or Math.max()
+Write a home made function
+
+
+
+
+ -->

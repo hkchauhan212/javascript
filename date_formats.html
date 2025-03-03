@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Date Formats</title>
+</head>
+<body>
+	<h1>JavaScript Date Formats</h1>
+	<h3>JavaScript ISO Dates</h3>
+	<p>ISO 8601 is the international standard for the representation of dates and times. The ISO 8601 syntax (YYYY-MM-DD) is also the preferred JavaScript date format</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>ISO Dates (Year and Month)</h3>
+	<p>ISO dates can be written without specifying the day (YYYY-MM):</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>ISO Dates (Only Year)</h3>
+	<p>ISO dates can be written without month and day (YYYY):</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>ISO Dates (Date-Time)</h3>
+	<p>Separate date and time with a capital T.</p>
+	<p>Indicate UTC time with a capital Z.</p>
+	<p id="demo04"></p>
+	<br>
+	<p>Modify the time relative to UTC by adding +HH:MM or subtraction -HH:MM to the time.</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript Long Dates.</h3>
+	<p>Long dates are most often written with a "MMM DD YYYY" syntax like this:</p>
+	<p id="demo06"></p>
+	<br>
+	<p>Month and day can be in any order:</p>
+	<p id="demo07"></p>
+	<br>
+	<p>And, month can be written in full (January), or abbreviated (Jan):</p>
+	<p id="demo08"></p>
+	<br>
+	<p>Commas are ignored. Names are case insensitive:</p>
+	<p id="demo09">	</p>
+	<br><hr>
+
+	<h3>You can then use the number of milliseconds to convert it to a date object:</h3>
+	<p id="demo10"></p>
+
+<script>
+	// demo01
+	let d01 = new Date("2015-03-25");
+	document.getElementById("demo01").innerHTML = d01;
+
+	// demo02
+	let d02 = new Date("2015-03");
+	document.getElementById("demo02").innerHTML = d02;
+
+	// demo03
+	let d03 = new Date("2015");
+	document.getElementById("demo03").innerHTML = d03;
+
+	// demo04
+	let d04	= new Date("2015-03-25T12:00:00Z");
+	document.getElementById("demo04").innerHTML = d04;
+
+	// demo05
+	document.getElementById("demo05").innerHTML = new Date("2015-03-25T12:00:00-06:00");
+
+	// demo06
+	let d06 = new Date("Mar 25 2015");
+	document.getElementById("demo06").innerHTML = d06;
+
+	// demo07
+	let d07 = new Date("25 Mar 2015");
+	document.getElementById("demo07").innerHTML = d07; 
+
+	// demo08	
+	let d08 = new Date("January 25 2015");
+	document.getElementById("demo08").innerHTML = d08;
+
+	// demo09
+	let d09 = new Date("JANUARY, 25, 2015");
+	document.getElementById("demo09").innerHTML = d09;
+
+	// demo10
+	let msec = Date.parse("Marck 21, 2012");
+	let d10 = new Date(msec);
+	document.getElementById("demo10").innerHTML = d10;
+</script>
+</body>
+</html>
+
+<!-- 
+WARNINGS !
+In some browsers, months or days with no leading zeroes may produce an error:
+const d = new Date("2015-3-25");
+
+The behavior of "YYYY/MM/DD" is undefined.
+Some browsers will try to guess the format. Some will return NaN.
+const d = new Date("2015/03/25");
+
+The behavior of  "DD-MM-YYYY" is also undefined.
+Some browsers will try to guess the format. Some will return NaN.
+const d = new Date("25-03-2015");
+
+
+ -->

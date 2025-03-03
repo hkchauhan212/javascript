@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Math Object</title>
+</head>
+<body>
+	<h1>JavaScript Math Object</h1>
+	<p>The JavaScript Math object allows you to perform mathematical tasks on numbers.</p>
+	<h3>JavaScript Math.PI</h3>
+	<p>Math.PI returns the ratio of a circle's circumference to its diameter:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>Math Properties (Constants)</h3>
+	<p>The syntax for any Math property is : Math.property. JavaScript provides 8 mathematical constants that can be accessed as Math properties:</p>
+	<p id="demo02"></p>
+	<p>returns Euler's number</p>
+	<p>returns PI</p>
+	<p>returns the square root of 2</p>
+	<p>returns the square root of 1/2</p>
+	<p>returns the natural logarithm of 2</p>
+	<p>returns the natural logarithm of 10</p>
+	<p>returns base 2 logarithm of E</p>
+	<p>returns base 10 logarithm of E</p>
+	<br><hr>
+
+	<h3>Math.round()</h3>
+	<p>Math.round(x) returns the nearest integer:</p>
+	<p>Math.round(x) returns the value of x rounded to its nearest integer:</p>
+	<p id="demo03"></p>
+	<br>
+	<p>Math.round(x) returns the value of x rounded to its nearest integer:</p>
+	<p id="demo04"></p>
+	<br>
+	<p>Math.round(x) returns the value of x rounded to its nearest integer:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>Math.ceil()</h3>
+	<p>Math.ceil(x) returns the value of x rounded <strong>up</strong> to its nearest integer:</p>
+	<p id="demo06"></p>
+	<p id="demo07"></p>
+	<p id="demo08"></p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>Math.floor()</h3>
+	<p>Math.floor(x) returns the value of x rounded down to its nearest integer:</p>
+	<p>Math.floor(x) returns the value of x rounded <strong>down</strong> to its nearest integer:</p>
+	<p id="demo10"></p>
+	<p id="demo11"></p>
+	<p id="demo12"></p>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<h3>Math.trunc()</h3>
+	<p>Math.trunc(x) returns the integer part of x:</p>
+	<p id="demo14"></p>
+	<p id="demo15"></p>
+	<br><hr>
+
+	<h3>Math.sign()</h3>
+	<p>Math.sign(x) returns if x is negative, null or positive:</p>
+	<p id="demo16"></p>
+	<p id="demo17"></p>
+	<p id="demo18"></p>
+	<br><hr>
+
+	<h3>Math.pow()</h3>
+	<p>Math.pow(x, y) returns the value of x to the power of y:</p>
+	<p id="demo19"></p>
+	<br><hr>
+
+	<h3>Math.sqrt()</h3>
+	<p>Math.sqrt(x) returns the square root of x:</p>
+	<p id="demo20"></p>
+	<br><hr>
+
+	<h3>Math.abs()</h3>
+	<p>Math.abs(x) returns the absolute (positive) value of x:</p>
+	<p id="demo21"></p>
+	<br><hr>
+
+	<h3>Math.sin()</h3>
+	<p>Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).</p>
+	<p>If you want to use degrees instead of radians, you have to convert degrees to radians:</p>
+	<p>Angle in radians = Angle in degrees x PI / 180.</p>
+	<p id="demo22"></p>
+	<br><hr>
+
+	<h3>Math.cos()</h3>
+	<p>Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x (given in radians).</p>
+	<p>If you want to use degrees instead of radians, you have to convert degrees to radians:</p>
+	<p>Angle in radians = Angle in degrees x PI / 180.</p>
+	<p id="demo23"></p>
+	<br><hr>
+
+	<h3>Math.min() and Math.max()</h3>
+	<p>Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments:</p>
+	<p id="demo24"></p>
+	<br>
+	<p>Math.max() returns the highest value in a list of arguments.</p>
+	<p id="demo25"></p>
+	<br><hr>
+
+	<h3>Math.random()</h3>
+	<p>Math.random() returns a random number between 0 (inclusive), and 1 (exclusive):</p>
+	<p>Math.random() returns a random number between 0 and 1:</p>
+	<p id="demo26"></p>
+	<br><hr>
+
+	<h3>The Math.log() Method</h3>
+	<p>Math.log(x) returns the natural logarithm of x. The natural logarithm returns the time needed to reach a certain level of growth:</p>	
+	<p id="demo27"></p>
+	<br><hr>
+
+	<h3>The Math.log2() Method</h3>
+	<p>Math.log2(x) returns the base 2 logarithm of x.</p>
+	<p id="demo28"></p>
+	<br><hr>
+
+	<h3>The Math.log10() Method</h3>
+	<p>Math.log10() returns the base 10 logarithm of a number.</p>
+	<p>How many times must we multiply 10 to get 1000?</p>
+	<p id="demo29"></p>
+	<br><hr>
+
+<script>
+	// demo01
+	document.getElementById("demo01").innerHTML = Math.PI;
+
+	// demo02
+	document.getElementById("demo02").innerHTML = 
+	"<p><b>Math.E:</b>" + Math.E + "</p>" + 
+	"<p><b>Math.PI:</b>" + Math.PI + "</p>" + 
+	"<p><b>Math.SQRT2:</b>" + Math.SQRT2 + "</p>" + 
+	"<p><b>Math.SQRT1_2:</b>" + Math.SQRT1_2 + "</p>" + 
+	"<p><b>Math.LN2:</b>" + Math.LN2 + "</p>" + 
+	"<p><b>Math.LN10:</b>" + Math.LN10 + "</p>" + 
+	"<p><b>Math.LOG2E:</b>" + Math.LOG2E + "</p>" + 
+	"<p><b>Math.LOG10E:</b>" + Math.LOG10E; 
+
+	// demo03
+	document.getElementById("demo03").innerHTML = Math.round(4.6); 
+
+	// demo04
+	document.getElementById("demo04").innerHTML = Math.round(4.5);
+
+	// demo05
+	document.getElementById("demo05").innerHTML = Math.round(4.4);
+
+	// demo06 demo07 demo08 demo09
+	document.getElementById("demo06").innerHTML = "Math.ceil is (4.9) : " + Math.ceil(4.9);
+	document.getElementById("demo07").innerHTML = "Math.ceil is (4.6) : " + Math.ceil(4.6);
+	document.getElementById("demo08").innerHTML = "Math.ceil is (4.4) : " + Math.ceil(4.4);
+	document.getElementById("demo09").innerHTML = "Math.ceil is (4.2) : " + Math.ceil(4.2);
+
+	// demo10 demo11 demo12 demo13
+	document.getElementById("demo10").innerHTML = "Math.floor is (4.7) : " + Math.floor(4.7);
+	document.getElementById("demo11").innerHTML = "Math.floor is (4.5) : " + Math.floor(4.5);
+	document.getElementById("demo12").innerHTML = "Math.floor is (4.4) : " + Math.floor(4.4);
+	document.getElementById("demo13").innerHTML = "Math.floor is (4.1) : " + Math.floor(4.1);
+
+	// demo14
+	document.getElementById("demo14").innerHTML = "Math.trunc is (4.7) : " + Math.trunc(4.7);
+	document.getElementById("demo15").innerHTML = "Math.trunc is (4.3) : " + Math.trunc(4.3);
+
+	// demo16
+	document.getElementById("demo16").innerHTML = "Math.sign is (-4) : " + Math.sign(-4);
+	document.getElementById("demo17").innerHTML = "Math.sign is (0: " + Math.sign(0);
+	document.getElementById("demo18").innerHTML = "Math.sign is (4) : " + Math.sign(4);
+
+	// demo19
+	document.getElementById("demo19").innerHTML = "Math.pow is (8, 2) : " + Math.pow(8, 2); 
+
+	// demo20
+	document.getElementById("demo20").innerHTML = "Math.sqrt is (64) : " + Math.sqrt(64); 
+
+	// demo21
+	document.getElementById("demo21").innerHTML = "Math.abs is (-64) : " + Math.abs(-64);
+
+	// demo22
+	document.getElementById("demo22").innerHTML = "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
+
+	// demo23
+	document.getElementById("demo23").innerHTML = "The sine value of 90 degrees is " + Math.cos(90 * Math.PI / 180);
+
+	// demo24
+	document.getElementById("demo24").innerHTML = Math.min(0, 150, 100, 120, 50, -1, -100);
+
+	// demo25	
+	document.getElementById("demo25").innerHTML = Math.max(0, 150, 100, 150, 50, -1, -1.1);
+
+	// demo26
+	document.getElementById("demo26").innerHTML = Math.random();
+
+	// demo27
+	// document.getElementById("demo27").innerHTML = Math.log(1)
+	// document.getElementById("demo27").innerHTML = Math.log(2)
+	document.getElementById("demo27").innerHTML = Math.log(10)
+
+	// demo28
+	document.getElementById("demo28").innerHTML =  Math.log2(8);
+
+	// demo29
+	document.getElementById("demo29").innerHTML = Math.log10(1000);
+</script>
+</body>
+</html>
+
+<!-- 
+The Math Object:
+Unlike other objects, the Math object has no constructor.
+The Math object is static.
+All methods and properties can be used without creating a Math object first.
+
+Math Methods
+The syntax for Math any methods is : Math.method(number)
+
+Number to Integer
+There are 4 common methods to round a number to an integer:
+
+Math.round(x)	Returns x rounded to its nearest integer
+Math.ceil(x)	Returns x rounded up to its nearest integer
+Math.floor(x)	Returns x rounded down to its nearest integer
+Math.trunc(x)	Returns the integer part of x (new in ES6)
+-->

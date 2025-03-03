@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Array Methods</title>
+
+</head>
+<body>
+	<h1>JavaScript Array Methods</h1>
+	<h3>JavaScript Array length</h3>
+	<p>The length property returns the length of an array:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>JavaScript Array toString()</h3>
+	<p>The JavaScript method toString() converts an array to a string of (comma separated) array values.</p>
+	<p>The toString() method returns an array as a comma separated string:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>JavaScript Array at()</h3>
+	<p>The at() method returns an indexed element from an array.The at() method returns the same as [].The at() method is supported in all modern browsers since March 2022:</p>
+	<p>The at() method returns an indexed element from an array:</p>
+	<p id="demo03"></p>
+	<br>
+	<p>The bracket notation [] returns an indexed element from an array:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>JavaScript Array join()</h3>
+	<p>The join() method joins array elements into a string.</p>
+	<p>It this example we have used " * " as a separator between the elements:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<p><b>Note:</b>Popping and Pushing</p>
+	<p>When you work with arrays, it is easy to remove elements and add new elements. This is what popping and pushing is: Popping items out of an array, or pushing items into an array.</p>
+	<br><hr>
+
+	<h3>JavaScript Array pop()</h3>
+	<p>The pop() method removes the last element from an array.</p>
+	<p id="demo06"></p>
+	<p id="demo08"></p>
+	<p id="demo07"></p>
+	<br>
+
+	<h3>JavaScript Array push()</h3>
+	<p>The push() method appends a new element to an array:</p>
+	<p id="demo09"></p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>Shifting Elements</h3>
+	<p>Shifting is equivalent to popping, but working on the first element instead of the last.</p>
+	<br><hr>
+
+	<h3>JavaScript Array shift()</h3>
+	<p>The shift() method removes the first element of an array (and "shifts" the other elements to the left):</p>
+	<p id="demo11"></p>
+	<p id="demo12"></p>
+	<br>
+	<h3>JavaScript Array unshift()</h3>
+	<p>The unshift() method adds new elements to the beginning of an array:</p>
+	<p id="demo13"></p>
+	<p>The unshift() method returns the new array length:</p>
+	<p id="demo14"></p>
+	<p id="demo15"></p>
+	<br><hr>
+
+	<h3>Changing Elements</h3>
+	<p>Array elements are accessed using their index number:</p>
+	<p id="demo16"></p>
+	<p id="demo17"></p>
+	<br><hr>
+
+	<h3>JavaScript Array length</h3>
+	<p>The length property provides an easy way to append new elements to an array without using the push() method:</p>
+	<p id="demo18"></p>
+	<br><hr>
+
+	<h3>JavaScript Array delete()</h3>
+	<p><b>Warning ! </b> Using delete() leaves undefined holes in the array. Use pop() or shift() instead.</p>
+	<p>Deleting elements leaves undefined holes in an array:</p>
+	<p id="demo19"></p>
+	<p id="demo20"></p>
+	<br><hr>
+
+	<h3>JavaScript Array concat()</h3>
+	<p>The concat() method creates a new array by merging (concatenating) existing arrays:</p>
+	<p>The concat() method merges (concatenates) arrays:</p>
+	<p id="demo21"></p>
+	<p id="demo22"></p>
+	<p id="demo23"></p>
+	<br>
+	<h3>Example (Merging Three Arrays)</h3>
+	<p>The concat() method merges (concatenates) arrays:</p>
+	<p>let array1 = ["Chagan", "Magan"];</p>
+	<p>let array2 = ["Chaman"];</p>
+	<p>let array3 = ["Chintu", "Pintu", "Tinku"];</p>
+	<p id="demo24"></p>
+	<br><hr>
+
+	<h3>Array copyWithin()</h3>
+	<p>The copyWithin() method copies array elements to another position in an array:</p>
+	<p>copyWithin() copies array elements to another position in an array, overwriting existing values:</p>
+	<p>Copy to index 2, all elements from index 0:</p>
+	<p id="demo25"></p>
+	<p><b>Note:</b>The copyWithin() method overwrites the existing values. The copyWithin() method does not add items to the array. The copyWithin() method does not change the length of the array.</p>
+	<br><hr>
+
+	<h3>JavaScript Array flat()</h3>
+	<p>The flat() method creates a new array with sub-array elements concatenated to a specified depth.</p>
+	<p id="demo26"></p>
+	<br><hr>
+
+	<h3>JavaScript Array flatMap()</h3>
+	<p>The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.</p>
+	<p id="demo27"></p>
+	<br><hr>
+
+	<h3>Splicing and Slicing Arrays</h3>
+	<p>The splice() method adds new items to an array.</p>
+	<p>The slice() method slices out a piece of an array.</p>
+	<br><hr>
+
+	<h3>JavaScript Array splice()</h3>
+	<p>The splice() method adds new elements to an array:</p>
+	<p id="demo28"></p>
+	<p id="demo29"></p>
+	<p>The first parameter (2) defines the position where new elements should be added (spliced in).The second parameter (0) defines how many elements should be removed.The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.The splice() method returns an array with the deleted items:</p>
+	<br>
+	<p>The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):</p>
+	<p id="demo30"></p>
+	<p id="demo31"></p>
+	<p id="demo32"></p>
+	<br><hr>
+
+	<h3>Using splice() to Remove Elements</h3>
+	<p>With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:</p>
+	<p id="demo33"></p>
+	<p id="demo34"></p>
+	<p>The first parameter (0) defines the position where new elements should be added (spliced in).The second parameter (1) defines how many elements should be removed.The rest of the parameters are omitted. No new elements will be added.</p>
+	<br><hr>
+
+	<h3>JavaScript Array toSpliced()</h3>
+	<p>added the Array toSpliced() method as a safe way to splice an array without altering the original array</p>
+	<p>The difference between the new toSpliced() method and the old splice() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.</p>
+	<p id="demo35"></p>
+	<br><hr>
+
+	<h3>JavaScript Array slice()</h3>
+	<p>The slice() method slices out a piece of an array into a new array:</p>
+	<p id="demo36"></p>
+	<br>
+	<p>The slice() method can take two arguments like slice(1, 3).</p>
+	<p>The method then selects elements from the start argument, and up to (but not including) the end argument.</p>
+	<p id="demo37"></p>
+	<br><hr>
+
+	<h3>Automatic toString()</h3>
+	<p>JavaScript automatically converts an array to a comma separated string when a primitive value is expected.</p>
+	<p>This is always the case when you try to output an array.</p>
+	<p>These two examples will produce the same result:</p>
+	<p>The toString() method returns an array as a comma separated string:</p>
+	<p id="demo38"></p>
+	<p id="demo39"></p>
+	<p>JavaScript automatically converts an array to a comma separated string when a simple value is expected:</p>
+	<p id="demo40"></p>
+	<p id="demo41"></p>
+
+<script>
+	// demo01
+	let fruits = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("demo01").innerHTML = fruits.length;
+
+	// demo02
+	document.getElementById("demo02").innerHTML = fruits.toString();
+
+	// demo03
+	document.getElementById("demo03").innerHTML = fruits.at(2);
+
+	// demo04
+	document.getElementById("demo04").innerHTML = fruits[2];
+
+	// demo05
+	document.getElementById("demo05").innerHTML = fruits.join(" * ");
+
+	// demo06
+	document.getElementById("demo06").innerHTML = fruits;
+	// fruits.pop();
+	document.getElementById("demo08").innerHTML = fruits.pop();
+	document.getElementById("demo07").innerHTML = fruits;
+
+	// demo09
+	fruits.push("Mango", "Kivi");
+	document.getElementById("demo09").innerHTML = fruits.push("Poteto");
+	document.getElementById("demo10").innerHTML = fruits;
+	
+	// demo11
+	document.getElementById("demo11").innerHTML = fruits;
+	fruits.shift();
+	document.getElementById("demo12").innerHTML = fruits;
+
+	// demo13
+	fruits.unshift("Lemon");
+	document.getElementById("demo13").innerHTML = fruits;
+	
+	// demo14
+	document.getElementById("demo14").innerHTML = fruits.unshift("Watermelon");
+	document.getElementById("demo15").innerHTML = fruits;
+
+	// demo16
+	let fruits07 = ["Apples", "Amla", "Barberries", "Cherry", "Emu Berry Fruit", "Banana"];
+	document.getElementById("demo16").innerHTML = fruits07;
+	fruits07[5] = "Feijoa";
+	document.getElementById("demo17").innerHTML = fruits07;
+
+	// demo18
+	fruits07[fruits07.length] = "Lapsi";
+	document.getElementById("demo18").innerHTML = fruits07;
+
+	// demo19
+	document.getElementById("demo19").innerHTML = "The First fruit is : " + fruits07[0];
+	delete fruits07[0];
+	document.getElementById("demo20").innerHTML = "The First fruit is : " + fruits07[0];
+
+	// demo21
+	let myGirls = ["Chinki", "Minki"];
+	let myBoys = ["Chaman", "Chagan", "Magan"];
+	document.getElementById("demo21").innerHTML = "myGirls name : " + myGirls;
+	document.getElementById("demo22").innerHTML = "myBoys name" + myBoys;
+	document.getElementById("demo23").innerHTML = "myGirls and myBoys : " + myGirls.concat(myBoys);
+
+	// demo24
+	let array1 = ["Chagan", "Magan"];
+	let array2 = ["Chaman"];
+	let array3 = ["Chintu", "Pintu", "Tinku"];
+	document.getElementById("demo24").innerHTML = array1.concat(array2,array3);
+
+	// demo25
+	let fruits10 = ["Apples", "Amla", "Barberries", "Cherry", "Emu Berry Fruit", "Banana", "Bor"];
+	document.getElementById("demo25").innerHTML = fruits10.copyWithin(3);
+	// document.getElementById("demo25").innerHTML = fruits10.copyWithin(2, 0);
+	// document.getElementById("demo25").innerHTML = fruits10.copyWithin(2, 0, 2);
+
+
+	// demo26
+	const myArr = [[1,2], [3,4], [5,6]];
+	const newArr = myArr.flat();
+	document.getElementById("demo26").innerHTML = newArr;
+
+	// demo27	
+	const myArr07 = [1, 2, 3, 4, 5, 6];
+	const newnum = myArr07.flatMap(x => [x, x * 10]);
+	document.getElementById("demo27").innerHTML = newnum;
+
+	// demo28
+	let fruits15 = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("demo28").innerHTML = fruits15;
+	fruits15.splice(4, 0, "Lemon", "Kivi");
+	document.getElementById("demo29").innerHTML = fruits15;
+
+	// demo30
+	const fruits21 = ["Banana", "Orange", "Apple", "Mango"];
+	document.getElementById("demo30").innerHTML = "Original Array : " + fruits21;
+	let removed = fruits21.splice(2, 2, "Lemon", "Kivi");
+	document.getElementById("demo31").innerHTML =  "New Array : " + fruits21;
+	document.getElementById("demo32").innerHTML =  "removed items : " + removed;
+
+	// demo33
+	document.getElementById("demo33").innerHTML = fruits21;
+	fruits21.splice(0, 1);
+	document.getElementById("demo34").innerHTML = fruits21;	
+
+	// demo35
+	const months = ["Jan", "Feb", "Mar", "Apr"];
+	const spliced = months.toSpliced(0, 1);
+	document.getElementById("demo35").innerHTML = spliced;
+
+	// demo36
+	var fruits25 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+	var citrus = fruits25.slice(2);
+	document.getElementById("demo36").innerHTML = fruits25 + "<br><br>" + citrus;
+
+	// demo37
+	var citrus = fruits25.slice(2, 5);
+	document.getElementById("demo37").innerHTML = fruits25 + "<br><br>" + citrus;
+
+	// demo38
+	var fruits31 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+	document.getElementById("demo38").innerHTML =  fruits31.toString();
+	document.getElementById("demo39").innerHTML =  typeof fruits31;
+
+	// demo40
+	document.getElementById("demo40").innerHTML = fruits31;
+	document.getElementById("demo41").innerHTML = typeof fruits31;
+</script>
+</body>
+</html>
+
+<!-- Watermelon
+	Strawberry	
+	Pineapple
+	Papaya 
+-->
+
+<!-- 
+Basic Array Methods :
+Array length
+Array toString()
+Array at()
+Array join()
+Array pop()
+Array push()
+
+See Also:
+Search Methods
+Sort Methods
+Iteration Methods
+Array shift()
+Array unshift()
+Array delete()
+Array concat()
+Array copyWithin()
+Array flat()
+Array splice()
+Array toSpliced()
+	document.getElementById("demo11").innerHTML = fruits;
+Array s12ce()
+
+Merging Arrays (Concatenating)
+
+In programming languages, concatenation means joining strings end-to-end.
+Concatenation "snow" and "ball" gives "snowball".
+Concatenating arrays means joining arrays end-to-end.
+
+Flattening an Array
+Flattening an array is the process of reducing the dimensionality of an array.
+Flattening is useful when you want to convert a multi-dimensional array into a one-dimensional array.
+ -->

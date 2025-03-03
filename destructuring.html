@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Destructuring</title>
+</head>
+<body>
+	<h1>Destructuring Assignment Syntax</h1>
+	<p><b>Note: </b></p>
+	<p>The destructuring assignment syntax unpack object properties into variables:</p>
+	<p>let {firstName, lastName} = person;</p>
+	<p>It can also unpack arrays and any other iterables:</p>
+	<p>let [firstName, lastName] = person;</p>
+	<hr>
+
+	<h3>Object Destructuring</h3>
+	<p>For potentially missing properties we can set default values:</p>
+	<p id="demo01"></p>
+	<br><hr>	
+	<p> <b> Note: </b> Destructuring is not destructive. Destructuring does not change the original object.</p>
+	<br><hr>	
+
+	<h3>Object Default Values</h3>
+	<p>For potentially missing properties we can set default values:</p>
+	<p id="demo02"></p>
+	<br><hr>	
+
+	<h3>Object Property Alias</h3>
+	<p id="demo03"></p>
+	<br><hr>	
+
+	<h3>String Destructuring</h3>
+	<p>One use for destructuring is unpacking string characters.</p>
+	<p id="demo04"></p>
+	<br><hr>	
+
+	<h3>Array Destructuring</h3>
+	<p>We can pick up array variables into our own variables:</p>
+	<p id="demo05"></p>
+	<br><hr>	
+
+	<h3>Skipping Array Values</h3>
+	<p>We can skip array values using two or more commas:</p>
+	<p id="demo06"></p>
+	<br><hr>	
+
+	<h3>Array Position Values</h3>
+	<p>We can pick up values from specific index locations of an array:</p>
+	<p id="demo07"></p>
+	<br><hr>	
+
+	<h3>The Rest Property</h3>
+	<p>You can end a destructuring syntax with a rest property. This syntax will store all remaining values into a new array:</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>Destructuring Maps</h3>
+	<p>Move array variables into single variables:</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>Swapping JavaScript Variables</h3>
+	<p>You can swap the values of two variables using a destructuring assignment:</p>
+	<p id="demo10"></p>
+
+
+<script>
+	// demo01
+	var person = {
+		firstName: "John",
+		lastName: "Doe",
+		age: 50
+	};
+	// Destructuring
+	var {firstName, lastName} = person;
+	// let {lastName, firstName} = person;
+	// Display primitive Values	
+	document.getElementById("demo01").innerHTML = lastName + " " + firstName;
+
+	// demo02
+	var {firstName, lastName, country = "US"} = person;
+	document.getElementById("demo02").innerHTML = firstName + " " + lastName + " " + country;
+
+	// demo03
+	var {lastName : name} = person;
+	document.getElementById("demo03").innerHTML = name;
+
+	// demo04
+	var fullName = "W3Schools";
+	var [a1, a2, a3, a4, a5, a6] = fullName;
+	document.getElementById("demo04").innerHTML = a1;
+
+	// demo05
+	var fruits = ["Bananas", "Oranges", "Apples", "Mangos"];
+	var [fruits1, fruits2] = fruits;
+	document.getElementById("demo05").innerHTML = fruits1 + " " + fruits2;
+
+	// demo06
+	var [fruits1,,,fruits2] = fruits;
+	document.getElementById("demo06").innerHTML = fruits1 + " " + fruits2;
+
+	// demo07	
+	var {[0]:fruits1 ,[2]:fruits2} = fruits;
+	document.getElementById("demo07").innerHTML = fruits1 + " " + fruits2;
+
+	// demo08
+	var number = [10, 20, 30, 40, 50, 60, 70];
+	var [a,b, ...rest] = number;
+	document.getElementById("demo08").innerHTML = 
+	"<p>a is " + a +
+	"<p>b is " + b +
+	"<p>the rest is " + rest;
+
+	// demo09
+	var fruits = new Map([
+		["Apple", 500],
+		["Banana", 1500],
+		["Orange", 750]
+		]);
+	let text = "";
+	for(var [key, value] of fruits) {
+		text += "<p>" + key + " is " + value;
+	}
+	document.getElementById("demo09").innerHTML = text;
+
+	// demo10
+	[firstName, lastName] = [lastName, firstName];
+	document.getElementById("demo10").innerHTML = firstName + " " + lastName; 
+	
+
+</script>
+</body>
+</html>

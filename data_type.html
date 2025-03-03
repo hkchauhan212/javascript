@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Data Type</title>
+</head>
+<body>
+	<h3>The Concept of Data Types</h3>
+	<p><strong>This is not a number. Thid is a string.</strong></p>
+	<p>In programming, data types is an important concept. To be able to operate on variables, it is important to know something about the type. Without data types, a computer cannot safely solve this:</p>
+	<p>When adding a number and a string, JavaScript will treat the number as a string.</p>
+	<p>let a = 15 + "Volvo";</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The Concept of Data Types</h3>
+	<p>When adding a string and a number, JavaScript will treat the number as a string.</p>
+	<p>let a = "Volvo" + 15;</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<p><b> JavaScript evaluates expressions from left to right. Different sequences can produce different results:</b> </p>
+	<p>JavaScript evaluates expressions from left to right. Different sequences can produce different results:</p>
+	<p>let c = 15 + 5 + "volvo";</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<p>JavaScript evaluates expressions from left to right. Different sequences can produce different results:</p>
+	<p>let d = "volvo " + 5 + 20 + " volvo";</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>JavaScript Types are Dynamic</h3>
+	<p>JavaScript has dynamic types. This means that the same variable can be used to hold different data types:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript Strings</h3>
+	<p>A string (or a text string) is a series of characters like "John Doe". Strings are written with quotes. You can use single or double quotes:</p>
+	<p>Strings are written with quotes. You can use single or double quotes:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>JavaScript Numbers</h3>
+	<p>All JavaScript numbers are stored as decimal numbers (floating point). Numbers can be written with, or without decimals:</p>
+	<p>Numbers can be written with, or without decimals:</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>Exponential Notation</h3>
+	<p>Extra large or extra small numbers can be written with scientific (exponential) notation:</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>JavaScript BigInt</h3>
+	<p>All JavaScript numbers are stored in a 64-bit floating-point format. JavaScript BigInt is a new datatype (ES2020) that can be used to store integer values that are too big to be represented by a normal JavaScript Number.</p>
+	<p>You cannot perform math between a BigInt type and a Number type.</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>JavaScript Booleans</h3>
+	<p>Booleans can only have two values: true or false.</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>JavaScript Arrays</h3>
+	<p>JavaScript arrays are written with square brackets. Array items are separated by commas. The following code declares (creates) an array called cars, containing three items (car names):</p>
+	<p>Array indexes are zero-based, which means the first item is [0].</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>Undefined</h3>
+	<p>In JavaScript, a variable without a value, has the value undefined. The type is also undefined.</p>
+	<p>The value (and the data type) of a variable with no value is <b>undefined</b>.</p>
+	<p id="demo12"></p>
+	<br><hr>
+
+	<p>varriable declar.</p>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<p>An empty string has both a legal value and a type:</p>
+	<p id="demo14"></p>
+
+<script>
+	// The Concept of Data Types
+	let a = 15 + "Volvo";
+	document.getElementById("demo01").innerHTML = a;
+
+	// demo02
+	let b = "volvo" + 15;
+	document.getElementById("demo02").innerHTML = b;
+
+	// demo03
+	let c = 15 + 5 + "volvo";
+	document.getElementById("demo03").innerHTML = c;
+
+	// demo04
+	let d = "volvo " + 5 + 20 + " volvo";
+	document.getElementById("demo04").innerHTML = d;
+
+	// demo05
+	let e;         // Now x is undefined
+	e = 5;         // Now x is a Number
+	e = "John";    // Now x is a String
+	document.getElementById("demo05").innerHTML = e;
+
+	// demo06
+	let carName01 = " Mustang"
+	let carName02 = "maruti suzuki"
+	document.getElementById("demo06").innerHTML = "My first car is " + carName01 + " And My second car is " + carName02 + ".";
+
+	// demo07
+	let x1 = 34.00000;
+	let x2 = 34;
+	let x3 = 3.14;
+	document.getElementById("demo07").innerHTML = x1 + "<br>" + x2 + "<br>" + x3;
+
+	// demo08
+	let f = 123e5;
+	let g = 123e-8;
+	document.getElementById("demo08").innerHTML = f + "<br>" + g;
+
+	// demo09
+	let h = BigInt(1234567891011129874563211478965);
+	document.getElementById("demo09").innerHTML = h;
+	let i = 5;
+	let j = 5;
+	let k = 6;
+	document.getElementById("demo10").innerHTML = (i == j) + "<br>" + (j == k);
+
+	// demo11
+	let cars = ["Audi", "BME", "Mustand GT"];
+	document.getElementById("demo11").innerHTML = cars[0];
+
+	// demo12
+	let car;
+	document.getElementById("demo12").innerHTML = car + "<br>" + typeof car;
+
+	// demo13
+	let l = "1662132";
+	document.getElementById("demo13").innerHTML = "The value is" + l + "<br>" + typeof l;
+
+	// demo14
+	let m = "";
+	document.getElementById("demo14").innerHTML = "The value is" + m + "<br>" + typeof m;
+</script>
+</body>
+</html>
+
+<!-- JavaScript has 8 Datatypes
+	NNBBSSUO
+		Null
+		Number
+		Bigint
+		Boolean
+		String
+		Symbol
+		Undefined
+		Object -->
+
+<!-- The Object Datatype
+	The object data type can contain both built-in objects, and user defined objects:
+	Built-in object types can be:
+	objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more. -->
+
+<!-- Numbers:
+	let length = 16;
+	let weight = 7.5;
+
+	Strings:
+	let color = "Yellow";
+	let lastName = "Johnson";
+
+	Booleans
+	let x = true;
+	let y = false;
+
+	Object:
+	const person = {firstName:"John", lastName:"Doe"};
+
+	Array object:
+	const cars = ["Saab", "Volvo", "BMW"];
+
+	Date object:
+	const date = new Date("2022-03-25"); -->

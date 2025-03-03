@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Js Introduction</title>
+</head>
+<body>
+	<p>What Can JavaScript Do?</p>
+	<p id="demo">Javascript can change HTML content.</p>
+	<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>click me</button>
+	<br> <hr> <br>
+
+	<p>JavaScript Can Change HTML Attribute Values</p>
+	<button type="button" onclick="document.getElementById('my-img').src='https://pngimg.com/uploads/bulb/bulb_PNG1247.png'">Turn on the light</button>
+	<img id="my-img" src="http://pluspng.com/img-png/bulb-hd-png-download-this-high-resolution-bulb-png-image-without-background-3000.png" width="120px">
+	<button type="button" onclick="document.getElementById('my-img').src='http://pluspng.com/img-png/bulb-hd-png-download-this-high-resolution-bulb-png-image-without-background-3000.png'">Turn off the light</button>
+	<br> <hr> <br>
+
+	<p>JavaScript Can Change HTML Styles (CSS)</p>
+	<p id="font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua.</p>
+	<button type="button" onclick="document.getElementById('font').style.fontSize='3.5rem'">change font size</button>
+	<button type="button" onclick="document.getElementById('font').style.fontSize='1rem'">remove font size</button>	
+	<br> <hr> <br>
+
+	<p>JavaScript Can Hide and show HTML Elements</p>
+	<p id="hide"> <b>Hiding HTML elements can be done by changing the display style use display none and block.</b></p>
+	<button type="button" onclick="document.getElementById('hide').style.display='none'">Hide this text</button>
+	<button type="button" onclick="document.getElementById('hide').style.display='block'">Show this text</button>
+</body>
+</html>

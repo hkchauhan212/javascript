@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The JavaScript this Keyword</title>
+</head>
+<body>
+	<h3>The JavaScript this Keyword</h3>
+	<p>In this example, <b>this</b> refers to the <b>person</b> object.</p>
+	<p>Because <b>fullName</b> is a method of the person object.</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<p><b>Note : </b>this is not a variable. It is a keyword. You cannot change the value of this.</p>
+	<br><hr>
+
+	<h3>this in a Method</h3>
+	<p>In this example, <b>this</b> refers to the <b>person</b> object.</p>
+	<p>Because <b>fullName</b> is a method of the person object.</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>this Alone</h3>
+	<p>In this example, <b>this</b> refers to the window object:</p>
+	<p id="demo03"></p>
+	<br>
+	<p>In this example, <b>this</b> refers to the window object:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>his in a Function (Default)</h3>
+	<p>In this example, <b>this</b> refers to the the window object:</p>
+	<p id="demo05"></p>
+	<br>
+	<p>In a function, by default, <b>this</b> refers to the global object.</p>
+	<p>Strict mode does not allow default binding, so <b>this</b> is:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+
+<script>
+	// demo01
+	var person = {
+		firstName: "john",
+		lastName: "Doe",
+		id: 56565,
+		fullName: function (){
+			return this.firstName + " " + this.lastName;
+		}
+	};
+	document.getElementById("demo01").innerHTML = person.fullName();
+
+	// demo02
+	document.getElementById("demo02").innerHTML = person.fullName();
+
+	// demo03
+	var x = this;
+	document.getElementById("demo03").innerHTML = x;
+
+	// demo04
+	"use strict";
+	let y = this;
+	document.getElementById("demo04").innerHTML = y;
+
+	// demo05
+	document.getElementById("demo05").innerHTML = myFunction();
+	function myFunction() {
+		return this;
+	}
+
+	// demo06
+	"use strict";
+	document.getElementById("demo06").innerHTML = myFunction01();
+	function myFunction01(){
+		return this;
+	}
+</script>
+</body>
+</html>
+
+<!-- 
+
+What is this?
+In JavaScript, the this keyword refers to an object.
+
+The this keyword refers to different objects depending on how it is used:
+
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+
+
+This Precedence
+To determine which object this refers to; use the following precedence of order.
+
+Precedence	Object
+1	bind()
+2	apply() and call()
+3	Object method
+4	Global scope
+Is this in a function being called using bind()?
+
+Is this in a function being called using apply()?
+
+Is this in a function being called using call()?
+
+Is this in an object function (method)?
+
+Is this in a function in the global scope.
+ -->

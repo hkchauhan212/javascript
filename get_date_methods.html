@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Get Date Methods</title>
+</head>
+<body>
+	<h1>JavaScript Get Date Methods</h1>
+	<h3>The new Date() Constructor</h3>
+	<p>In JavaScript, date objects are created with new Date(). new Date() returns a date object with the current date and time</p>
+	<p>Create a new date object with the current date and time:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The getFullYear() Method</h3>
+	<p>Return the full year of a date object:</p>
+	<p id="demo02"></p>
+	<br>
+	<p>The getMonth() method returns the month of a date as a number (0-11).</p>
+	<p id="demo03"></p>
+	<br>
+	<p>To get the correct month number, you must add 1:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>You can use an array of names to return the month as a name:</h3>
+	<p>Return the month as a number.</p>
+	<p>You can use an array of names to return the month as a name:</p>
+	<p>In JavaScript, January is month number 0, February is number 1, ... Finally, December is month number 11.</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>The getDate() Method</h3>
+	<p>The getDate() method returns the day of a date as a number (1-31):</p>
+	<p>Return the day of a date as a number (1-31):</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>The getHours() Method</h3>
+	<p>The getHours() method returns the hours of a date as a number (0-23):</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>The getMinutes() Method</h3>
+	<p>The getMinutes() method returns the minutes of a date as a number (0-59):</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>The getSeconds() Method</h3>
+	<p>The getSeconds() method returns the seconds of a date as a number (0-59):</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>The getMilliseconds() Method</h3>
+	<p>The getMilliseconds() method returns the milliseconds of a date as a number (0-999):</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>The getDay() Method</h3>
+	<p>The getDay() method returns the weekday of a date as a number (0-6).</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>The getTime() Method</h3>
+	<p>The getTime() method returns the number of milliseconds since January 1, 1970:</p>
+	<p id="demo12"></p>
+	<br><hr>
+
+	<h3>The Date.now() Method</h3>
+	<p>Date.now() returns the number of milliseconds since January 1, 1970.</p>
+	<p id="demo13"></p>
+	<br><hr>
+
+
+
+<script>	
+	// demo01
+	let d01 = new Date();
+	document.getElementById("demo01").innerHTML = d01;
+
+	// demo02
+	let d02 = new Date("2021-03-25");
+	document.getElementById("demo02").innerHTML = d02.getFullYear();
+
+	// demo03
+	document.getElementById("demo03").innerHTML = d02.getMonth();
+
+	// demo04
+	let d03 = new Date();
+	document.getElementById("demo04").innerHTML = d03.getMonth() + 1;
+
+	// demo05
+	let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	let d05 = new Date("2021-03-25");
+	// let d05 = new Date();
+	let month = months[d05.getMonth()];
+	document.getElementById("demo05").innerHTML = month;
+
+	// demo06
+	let d06 = new Date("2021-03-25");
+	// let d06 = new Date();
+	document.getElementById("demo06").innerHTML = d06.getDate();
+
+	// demo07
+	let d07 = new Date("2021-03-25");
+	// let d07 = new Date();
+	document.getElementById("demo07").innerHTML = d07.getHours();
+
+
+	// demo08
+	// let d08 = new Date("2021-03-25");
+	let d08 = new Date();
+	document.getElementById("demo08").innerHTML = d08.getMinutes();
+
+	// demo09	
+	// let d09 = new Date("2021-03-25");
+	let d09 = new Date();
+	document.getElementById("demo09").innerHTML = d09.getSeconds();
+
+	// demo10	
+	// let d10 = new Date("2021-03-25");
+	let d10 = new Date();
+	document.getElementById("demo10").innerHTML = d10.getMilliseconds();
+
+	// demo11	
+	// let d11 = new Date("2021-03-25");
+	let d11 = new Date();
+	document.getElementById("demo11").innerHTML = d11.getDay();
+
+	// demo12	
+	// let d12 = new Date("1970-01-01");
+	let d12 = new Date();
+	// let d12 = new Date("1970-03-03");
+	document.getElementById("demo12").innerHTML = d12.getTime();
+
+	// demo13	
+	let date = Date.now();
+	document.getElementById("demo13").innerHTML = date;
+
+
+</script>
+</body>
+</html>
+
+<!-- 
+Date 				Get Methods
+Method				Description
+getFullYear()		Get year as a four digit number (yyyy)
+getMonth()			Get month as a number (0-11)
+getDate()			Get day as a number (1-31)
+getDay()			Get weekday as a number (0-6)
+getHours()			Get hour (0-23)
+getMinutes()		Get minute (0-59)
+getSeconds()		Get second (0-59)
+getMilliseconds()	Get millisecond (0-999)
+getTime()			Get time (milliseconds since January 1, 1970)
+ 
+Warning !
+Old JavaScript code might use the non-standard method getYear().
+getYear() is supposed to return a 2-digit year.
+getYear() is deprecated. Do not use it!
+
+
+ -->

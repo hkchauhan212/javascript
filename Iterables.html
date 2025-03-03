@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Iterables</title>
+</head>
+<body>
+	<h4>The For Of Loop</h4>
+	<p>The JavaScript for..of statement loops through the elements of an iterable object.</p>
+	<p><pre>
+		for (variable of iterable) {
+ 	 		// code block to be executed
+		}
+	</pre></p>
+	<h3>Iterating Over a String</h3>
+	<p>You can use a for..of loop to iterate over the elements of a string:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>Iterating Over an Array</h3>
+	<p>You can use a for..of loop to iterate over the elements of an Array:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>Iterating Over a Set</h3>
+	<p>You can use a for..of loop to iterate over the elements of a Set:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Iterating Over a Map</h3>
+	<p>You can use a for..of loop to iterate over the elements of a Map:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>Home Made Iterable</h3>
+	<p>This iterable returns never ending: 10,20,30,40,.... Everytime next() is called:</p>
+	<p id="demo05"></p>
+	<br>
+	<p>The problem with a home made iterable:</p>
+	<p>It does not support the JavaScript for..of statement.</p>
+	<br><hr>
+
+	<h3>A JavaScript iterable is an object that has a Symbol.iterator.</h3>
+	<p>The Symbol.iterator is a function that returns a next() function.</p>
+	<p>An iterable can be iterated over with the code: for (const x of iterable) { }</p>
+	<p id="demo06"></p>
+
+
+<script>
+	// demo01
+	// create a string
+	let name = "Harikrushan";
+
+	// List all Element
+	let text = "";
+	for(let x of name){
+		text += x + "<br>";
+	}
+	document.getElementById("demo01").innerHTML = text;
+
+	// demo02
+	// create aa Array
+	const letters = ["a", "b", "c", "d"];
+
+	// List all element
+	let text01 = "";
+	for (let p of letters) {
+		text01 += p + "<br>";
+	}
+	document.getElementById("demo02").innerHTML = text01;
+
+	// demo03
+	// create a set
+	const letters05 = (["a", "b", "c", "d"]);
+
+	// List all Element
+	let text05 = "";
+	for (let w of letters05) {
+		text05 += w + "<br>";
+	}
+	document.getElementById("demo03").innerHTML = text05;
+
+	// demo04	
+	// Create a Map
+	let fruits = new Map([
+		["Apple", 500],
+		["Banana", 1500],
+		["Orange", 750]
+	]);
+	
+	// List all entries
+	let text07 = "";
+	for(let d of fruits){
+		text07 += d + "<br>";
+	}
+	document.getElementById("demo04").innerHTML = text07;
+
+	// demo05
+	// Home made iterables
+	function myFunction (){
+		let n = 0;
+		return {
+			next: function () {
+				n += 10;
+				return {value:n, done:false};
+			}
+		};
+	}
+	// Create Itrables
+	let n = myFunction();
+	n.next(); // 10
+	n.next(); // 20
+	n.next(); // 30
+
+	document.getElementById("demo05").innerHTML = n.next().value;
+
+	// demo06
+	// create an obect
+	myNumber = {};
+
+	// Make it Itrables
+	myNumber[Symbol.iterator] = function(){
+		let i = 0;
+		done = false;
+		return{
+			next() {
+				i += 10;
+				if (i == 100) {done = true}
+				return {value:i, done:done}; 
+			}
+		}; 
+	}
+	let text21 = "";
+	for (let num of myNumber){
+		text21 += num + "<br>"
+	}
+	document.getElementById("demo06").innerHTML = text21;
+
+</script>
+</body>
+</html>
+
+<!-- 
+Iterables are iterable objects (like Arrays).
+Iterables can be accessed with simple and efficient code
+Iterables can be iterated over with for..of loops
+
+Iterating
+Iterating is easy to understand.
+
+It simply means looping over a sequence of elements.
+
+Here are some easy examples:
+
+Iterating over a String
+Iterating over an Array
+
+JavaScript Iterables are objects that can be iterated over, allowing you to access their values one by one. Iterables provide a way to work with collections of data, such as arrays, sets, maps, and more.
+
+Characteristics of Iterables:
+
+1. Iterability: Can be iterated over using a for...of loop or other iteration methods.
+2. Values: Provide access to their values through an iterator.
+3. Next value: Can retrieve the next value from the iterator.
+
+Types of Iterables:
+
+1. Arrays: [1, 2, 3]
+2. Sets: new Set([1, 2, 3])
+3. Maps: new Map([['a', 1], ['b', 2]])
+4. Strings: "hello"
+5. TypedArrays: new Uint8Array([1, 2, 3])
+6. Iterators: Objects that implement the iterator protocol.
+7. Generators: Functions that return an iterator.
+
+Iteration Methods:
+
+1. for...of loop
+2. Array.from() method
+3. Spread syntax (...)
+4. Iterator protocol (next(), done, value)
+5. forEach() method (for arrays and array-like objects)
+
+Iterator Protocol:
+
+To create an iterable, an object must implement the iterator protocol, which consists of:
+
+1. Symbol.iterator property: Returns an iterator object.
+2. next() method: Returns an object with done and value properties.
+3. done property: Indicates whether iteration is complete.
+4. value property: Returns the current value.
+ -->

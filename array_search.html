@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Array Search</title>
+</head>
+<body>
+	<h1>JavaScript Array Search</h1>
+	<h3>JavaScript Array indexOf()</h3>
+	<p>The indexOf() method searches an array for an element value and returns its position.</p>
+	<p id="demo01"></p>
+	<h3>JavaScript Array lastIndexOf()</h3>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>JavaScript Array includes()</h3>
+	<p> introduced Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).</p>
+	<p><strong>Note:</strong> The includes method is not supported in Edge 13 (and earlier versions).</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>JavaScript Array find()</h3>
+	<p>The find() method returns the value of the first array element that passes a test function.</p>
+	<p>This example finds (returns the value of) the first element that is larger than 18:</p>
+	<p>let number = [4, 6, 9, 12, 17, 21, 26];</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>JavaScript Array findIndex()</h3>
+	<p>The findIndex() method returns the index of the first array element that passes a test function.</p>
+	<p>This example finds the index of the first element that is larger than 18:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript Array findLast() Method</h3>
+	<p>added the findLast() method that will start from the end of an array and return the value of the first element that satisfies a condition.</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>JavaScript Array findLastIndex() Method</h3>
+	<p>The findLastIndex() method finds the index of the last element that satisfies a condition.</p>
+	<p id="demo07"></p>
+
+
+<script>
+	// demo01
+	let fruits = ["Apple", "Orange", "Apple", "Mango"];
+	let position01 = fruits.indexOf("Apple") + 1;
+	document.getElementById("demo01").innerHTML = "Apple is found in position " + position01;
+	
+	// demo02
+	let position02 = fruits.lastIndexOf("Apple") + 1;
+	document.getElementById("demo02").innerHTML = "Apple is found in position " + position02;
+
+	// demo03
+	document.getElementById("demo03").innerHTML = fruits.includes("Mango");
+
+	// demo04
+	let number = [4, 6, 9, 12, 21, 26];
+	let first = number.find(myFunction);
+	document.getElementById("demo04").innerHTML = "First number over 18 is :" + first;
+	function myFunction(value, index, array) {
+		return value > 18;
+	}
+
+	// demo05
+	document.getElementById("demo05").innerHTML = "First number over 18 is :" + number.findIndex(myFunction02);
+
+	function myFunction02(value, index, array){
+		return value > 18;
+	}
+
+	// demo06
+	let temp = [27, 28, 39, 40, 42, 35, 30];
+	let high = temp .findLast(x => x > 40);
+	document.getElementById("demo06").innerHTML = " The last temperature over 40 was " + high; 
+
+	// demo07	
+	const temp002 = [27, 28, 30, 40, 42, 35, 30];
+	let pos = temp002.findLastIndex(x => x > 40);
+
+	document.getElementById("demo07").innerHTML = "The last temperature over 40 was in position : " + pos;
+</script>
+</body>
+</html>
+<!-- 
+
+JavaScript Array indexOf()
+
+Syntax :
+array.indexOf(item, start)
+
+item		Required. The item to search for.
+start		Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the end.
+
+Array.indexOf() returns -1 if the item is not found.
+If the item is present more than once, it returns the position of the first occurrence.
+ -->
