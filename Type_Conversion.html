@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Type Conversion</title>
+</head>
+<body>
+	<h1>JavaScript Type Conversion</h1>
+	<p><pre>
+	Converting Strings to Numbers
+	Converting Numbers to Strings
+	Converting Dates to Numbers
+	Converting Numbers to Dates
+	Converting Booleans to Numbers
+	Converting Numbers to Booleans
+
+	JavaScript variables can be converted to a new variable and another data type:
+
+	By the use of a JavaScript function
+	Automatically by JavaScript itself
+	</pre></p>
+	<hr>
+	<h3>Converting Strings to Numbers</h3>
+	<p>The global method Number() converts a variable (or a value) into a number.A numeric string (like "3.14") converts to a number (like 3.14).An empty string (like "") converts to 0.A non numeric string (like "John") converts to NaN (Not a Number).</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The Unary + Operator</h3>
+	<p>The unary + operator can be used to convert a variable to a number:</p>
+	<p>The typeof operator returns the type of a variable or expression:</p>
+	<p id="demo02"></p>
+	<br>
+	<p>The typeof operator returns the type of a variable or expression:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Converting Numbers to Strings</h3>
+	<p>The global method String() can convert numbers to strings. It can be used on any type of numbers, literals, variables, or expressions:</p>
+	<p>The String() method can convert a number to a string.</p>
+	<p id="demo04"></p>
+	<br>
+	<p>The Number method toString() does the same.</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>Converting Dates to Numbers</h3>
+	<p>The global method Number() can be used to convert dates to numbers.</p>
+	<p id="demo06"></p>
+	<br>
+	<p>The date method getTime() does the same.</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>Converting Dates to Strings</h3>
+	<p>The global method String() can convert dates to strings.</p>
+	<p>String(Date())  // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"</p>
+	<p>The Date method toString() does the same.</p>
+	<p>Date().toString()  // returns "Thu Jul 17 2014 15:38:19 GMT+0200 (W. Europe Daylight Time)"</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>Converting Booleans to Numbers</h3>
+	<p>The global method Number() can also convert booleans to numbers.</p>
+	<p id="demo09"></p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>Automatic Type Conversion</h3>
+	<p>When JavaScript tries to operate on a "wrong" data type, it will try to convert the value to a "right" type. The result is not always what you expect:</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>Automatic String Conversion</h3>
+	<p>JavaScript automatically calls the variable's toString() function when you try to "output" an object or a variable:</p>
+
+
+<script>
+	// demo01
+	document.getElementById("demo01").innerHTML = 
+	"(3.14) is : " + Number("3.14") + "<br>" + 
+	"(Math.PI) is : " + Number(Math.PI) + "<br>" + 
+	"('    ') is : " + Number("    ") + "<br>" + 
+	"(' ') is : " + Number("") + "<br>" +
+	"(99 98) is : " + Number("99 88") + "<br>" + 
+	"('john') is : " + Number("John") + "<br>" ; 
+
+	// demo02
+	let y = "5";
+	let x = + y;
+	document.getElementById("demo02").innerHTML = typeof y + "<br>" + typeof x;
+
+	// demo03
+	var a = "John";
+	var b = + a;
+	document.getElementById("demo03").innerHTML = typeof a + "<br>" + typeof b;
+
+	// demo04
+	var a = 123;
+	document.getElementById("demo04").innerHTML = 
+	String(a) + "<br>" + 
+	String(123) + "<br>" + 
+	String(100 + 23);
+
+	// demo05
+	document.getElementById("demo05").innerHTML = 
+	a.toString() + "<br>" + 
+	(123).toString() + "<br>" + 
+	(100 + 23).toString();
+
+	// demo06
+	var d = new Date();
+	Number(d);
+	document.getElementById("demo06").innerHTML = Number(d);
+
+	// demo07	
+	d.getTime()
+	document.getElementById("demo07").innerHTML = Number(d);
+
+	// demo08	
+	document.getElementById("demo08").innerHTML = String(d);
+
+	// demo09
+	document.getElementById("demo09").innerHTML = "Boolean false is : " + Number(false);
+	// document.getElementById("demo09").innerHTML = "Boolean false is : " + String(false);
+	document.getElementById("demo10").innerHTML = "Boolean true is : " + Number(true);
+	// document.getElementById("demo10").innerHTML = "Boolean true is : " + String(true);
+
+	// demo11
+	document.getElementById("demo11").innerHTML = 
+	(5 + null) + "<br>" + 
+	("5" + null) + "<br>" + 
+	("5" + 2) + "<br>" + 
+	("5" - 2) + "<br>" + 
+	("5" * "2") + "<br>" + 
+	("5" / "2") + "<br>" ;
+
+</script>
+</body>
+</html>
+
+
+<!-- 
+
+Number Methods
+Method			Description
+Number()		Returns a number, converted from its argument
+parseFloat()	Parses a string and returns a floating point number
+parseInt()		Parses a string and returns an integer
+
+
+More Methods
+In the chapter Number Methods, you will find more methods that can be used to convert numbers to strings:
+
+Method				Description
+toExponential()		Returns a string, with a number rounded and written using exponential notation.
+toFixed()			Returns a string, with a number rounded and written with a specified number of decimals.
+toPrecision()		Returns a string, with a number written with a specified length
+
+ -->

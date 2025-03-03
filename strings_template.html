@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Strings Template</title>
+</head>
+<body>
+	<h1 style="text-align: center;">String Templates & Template Strings & Template Literals</h1>
+	<h1 style="text-align: center;">Templates are not supported in Internet Explorer.</h1>
+	<h3>Back-Tics Syntax</h3>
+	<p>Template Strings use back-ticks (``) rather than the quotes ("") to define a string:</p>
+	<p>Templates use back-ticks (``) to define a string:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<p>Template Strings allow both single and double quotes inside a string:</p>
+	<p>With back-ticks, you can use both single and double quotes inside a string:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>Template Strings allow multiline strings:</h3>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Variable Substitutions</h3>
+	<p>Templates allow variables in strings:</p>
+	<p id="demo04"></p>
+	<hr>
+	<p>Automatic replacing of variables with real values is called string interpolation.</p>
+	<hr>
+	<h3>Expression Substitution</h3>
+	<p>Template Strings allow expressions in strings:</p>
+	<p>Templates allow variables in strings:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>HTML Templates</h3>
+	<p>Templates allow variables in strings:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+
+<script>
+	// use back-ticks (``) 
+	let text01 = `Hello world!`;
+	document.getElementById("demo01").innerHTML = text01;
+
+	// Template Strings allow both single and double quotes inside a string:
+	let text02 = `He's often called "Johnny"`;
+	document.getElementById("demo02").innerHTML = text02;
+
+	// Template Strings allow multiline strings:
+	let text03 = 
+	`The quick
+	brown fox
+	jump over
+	the lazy dog`;
+	document.getElementById("demo03").innerHTML = text03;
+
+	// Templates allow variables in strings
+	let firstName01 = "Khajur";
+	let lastName02 = "Bhai";
+	let text07 = `Welcome ${firstName01}, ${lastName02}! `;
+	document.getElementById("demo04").innerHTML = text07;
+
+	// Templates allow variables in strings
+	let price = 10;
+	let VAT = 0.25;
+	let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+	document.getElementById("demo05").innerHTML = total;
+
+	// Templates allow variables in strings
+	let header = "Template Strings";
+	let tags = ["template strings", "javascript", "es6"];
+	let html = `<h2>${header}</h2><ul>`;
+	for (const x of tags){
+		html += `<li>${x}</li>`; 
+	}
+	html += `</ul>`;
+	document.getElementById("demo06").innerHTML = html;
+
+</script>
+</body>
+</html>
+
+<!-- Interpolation -->
+	<!-- Template String provide an easy way to interpolate variables and expressions into strings.
+	The method is called string interpolation.
+	The syntax is:
+	${...} -->
+
