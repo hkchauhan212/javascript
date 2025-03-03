@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS String Search</title>
+</head>
+<body>
+	<h1 style="text-align: center;">JavaScript String Search</h1>
+	<h2 style="text-align: center;">Lorem ipsum dolor sit amet, consectetur dolor elit</h2>
+	<h3>JavaScript String indexOf()</h3>
+	<p>The indexOf() method returns the index (position) of the first occurrence of a string in a string, or it returns -1 if the string is not found:</p>
+	<p>The position of the first occurrence of "dolor" is:</p>
+	<p>let index01 = text01.indexOf("dolor");</p>
+	<p id="demo01"></p>
+	<hr>
+	<h3>JavaScript String lastIndexOf()</h3>
+	<p>The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:</p>
+	<p>The position of the last occurrence of "locate" is:</p>
+	<p>let index02 = text01.lastIndexOf("dolor");</p>
+	<p id="demo02"></p>
+	<p>Both indexOf() and lastIndexOf() return -1 if the text is not found:</p>
+	<p>let index03 = text01.indexOf("hery");</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<p>Both methods accept a second parameter as the starting position for the search:</p>
+	<p>The lastIndexOf() method accepts a second parameter as the starting position for the search.</p>
+	<p>Remember that the lastIndexOf() method searches backwards, so position 15 means start the search at position 15, and search to the beginning.</p>
+	<p>let index04 = text01.indexOf("dolor", 15);</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<p>The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.</p>
+	<p>The lastIndexOf() method accepts a second parameter as the starting position for the search.</p>
+	<p>Remember that the lastIndexOf() method searches backwards, so position 15 means start the search at position 15, and search to the beginning.</p>
+	<p>let index05 = text01.lastIndexOf("dolor", 15);</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript String search()</h3>
+	<p>The search() method searches a string for a string (or a regular expression) and returns the position of the match:	</p>
+	<p>The position of the first occurrence of "locate" is:</p>
+	<p>let index06 = text01.search("dolor");</p>
+	<p id="demo06"></p>
+	<p>let index07 = text01.search(/dolor/);</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>JavaScript String match()</h3>
+	<h2>matchAll() does not work in Internet Explorer.
+	</h2>
+	<h2 style="text-align: center;">The rain in SPAIN stays mainly in the plain</h2>
+	<p>The match() method returns an array containing the results of matching a string against a string (or a regular expression).</p>
+	<p>Perform a search for "ain":</p>
+	<p id="demo08"></p>
+	<hr>
+	<p>text.match(/ain/);</p>
+	<p id="demo09"></p>
+	<hr>
+	<p>Perform a global search for "ain":</p>
+	<p>text.match(/ain/g);</p>
+	<p id="demo10"></p>
+	<hr>
+	<p>Perform a global, case-insensitive search for "ain":</p>
+	<p>text.match(/ain/gi);</p>
+	<p id="demo11"></p>
+	<hr>
+
+	<h3>JavaScript String matchAll()</h3>
+	<h2 style="text-align: center;">I love cats. Cats are very easy to love. Cats are very popular.</h2>
+	<p>The matchAll() method returns an iterator containing the results of matching a string against a string (or a regular expression).</p>
+	<p>const iterator01 = text.matchAll("Cats");</p>
+	<p id="demo12"></p>
+	<hr>
+	<p>If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.</p>
+	<p>const iterator02 = text.matchAll(/Cats/g);</p>
+	<p id="demo13"></p>
+	<hr>
+
+	<h3>JavaScript String includes()</h3>
+	<p>The includes() method returns true if a string contains a specified value. Otherwise it returns false.</p>
+	<p>includes() is an ES6 feature. includes() is not supported in Internet Explorer.</p>
+	<p>Check if a string includes "world":</p>
+	<p id="demo14"></p>
+	<hr>
+	<p>Check if a string includes "world". Start at position 12:</p>
+	<p id="demo15"></p>
+	<br><hr>
+
+	<h3>JavaScript String startsWith()</h3>
+	<p>startsWith() is an ES6 feature. startsWith() is not supported in Internet Explorer.</p>
+	<p>The startsWith() method returns true if a string begins with a specified value. Otherwise it returns false:</p>
+	<p>The startsWith() Method</p>
+	<p>Check if a string starts with "Hello":</p>
+	<p id="demo16"></p>
+	<hr>
+	<p>The startsWith() method is not supported in Internet Explorer.</p>
+	<p id="demo17"></p>
+	<hr>
+	<p>Returns false:  text.startsWith("world", 5)</p>
+	<p id="demo18"></p>
+	<hr>
+	<p>Returns true:  text.startsWith("world", 6)</p>
+	<p id="demo19"></p>
+	<br><hr>
+
+	<h3>JavaScript String endsWith()</h3>
+	<p>The endsWith() method returns true if a string ends with a specified value. Otherwise it returns false:</p>
+	<p>The endsWith() method is not supported in Internet Explorer.</p>
+	<p>Check if a string ends with "Doe":</p>
+	<p id="demo20"></p>
+	<hr>
+	<p>Check if the 11 first characters of a string ends with "world":</p>
+	<p>Check in the 11 first characters of a string ends with "world":</p>
+	<p id="demo21"></p>
+	<hr>
+
+<script>
+	// The position of the first occurrence of "dolor" is:
+	let text01 = "Lorem ipsum dolor sit amet, consectetur dolor elit";
+	let index01 = text01.indexOf("dolor");
+	document.getElementById("demo01").innerHTML = index01;
+
+	// The position of the last occurrence of "locate" is:
+	let index02 = text01.lastIndexOf("dolor");
+	document.getElementById("demo02").innerHTML = index02;
+
+	// value is not defind
+	let index03 = text01.indexOf("hery");
+	document.getElementById("demo03").innerHTML = index03;
+
+	// The indexOf() method accepts a second parameter as the starting position for the search:
+	let index04 = text01.indexOf("dolor", 15);
+	document.getElementById("demo04").innerHTML = index04;
+
+	// The lastIndexOf() method accepts a second parameter as the starting position for the search.
+	let index05 = text01.lastIndexOf("dolor", 15);
+	document.getElementById("demo05").innerHTML = index05;
+
+	// The search() method  
+	let index06 = text01.search("dolor");
+	document.getElementById("demo06").innerHTML = index06;
+	let index07 = text01.search(/dolor/);
+	document.getElementById("demo07").innerHTML = index07;
+
+	// Perform a search for "ain":
+	let text10 = "The rain in SPAIN stays mainly in the plain";
+	let myArr01 = text10.match("ain");
+	document.getElementById("demo08").innerHTML = myArr01.length + " " + myArr01;
+
+	// matchAll() does not work in Internet Explorer.
+
+	// text.match(/ain/);
+	let myArr02 = text10.match(/ain/);
+	document.getElementById("demo09").innerHTML = myArr02.length + " " + myArr02;
+
+	// text.match(/ain/g);
+	let myArr03 = text10.match(/ain/g);
+	document.getElementById("demo10").innerHTML = myArr03.length + " " + myArr03;
+
+	// Perform a global, case-insensitive search for "ain":
+	let myArr04 = text10.match(/ain/gi);
+	document.getElementById("demo11").innerHTML = myArr04.length + " " + myArr04;
+
+	// const iterator = text.matchAll("Cats");
+	let text21 = "I love cats. Cats are very easy to love. Cats are very popular.";
+	const iterator01 = text21.matchAll("Cats");
+	document.getElementById("demo12").innerHTML = Array.from(iterator01);
+
+	// const iterator = text.matchAll(/Cats/g);
+	const iterator02 = text21.matchAll(/Cats/g);
+	// const iterator02 = text21.matchAll(/Cats/gi);
+	document.getElementById("demo13").innerHTML = Array.from(iterator02);
+
+	// Check if a string includes "world":
+	let text30 = "Hello world, welcome to the universe.";
+	document.getElementById("demo14").innerHTML = text30.includes("world");
+
+	// text.includes("world", 12);
+	document.getElementById("demo15").innerHTML = text30.includes("world", 15);
+
+	// The startsWith() Method
+	document.getElementById("demo16").innerHTML = text30.startsWith("Hello");
+
+	// The startsWith() method is not supported in Internet Explorer.
+	document.getElementById("demo17").innerHTML = text30.startsWith("world");
+
+	// text.startsWith("world", 5)
+	document.getElementById("demo18").innerHTML = text30.startsWith("world", 5);
+
+	// text.startsWith("world", 6)
+	document.getElementById("demo19").innerHTML = text30.startsWith("world", 6);
+
+	//	The endsWith() method is not supported in Internet Explorer
+	let text41 = "John Doe";
+	document.getElementById("demo20").innerHTML = text41.endsWith("Doe");
+
+	// Check in the 11 first characters of a string ends with "world":
+	let text45 = "Hello world, welcome to the universe.";
+	document.getElementById("demo21").innerHTML = text45.endsWith("world", 11);
+
+
+</script>
+</body>
+</html>
+
+<!-- Did You Notice? -->

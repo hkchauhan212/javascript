@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Objects</title>
+</head>
+<body>
+	<h3>JavaScript Variables</h3>
+	<p>JavaScript variables are containers for data values. This code assigns a simple value (Fiat) to a variable named car:</p>
+	<p id="demo"></p>
+	<hr>
+
+	<!-- JavaScript Objects -->
+	<h3>JavaScript Objects</h3>
+	<p>Objects are variables too. But objects can contain many values. This code assigns many values (Fiat, 500, white) to an object named cars:</p>
+	<p id="demo02"></p>
+	<hr>
+
+	<!-- Creating a JavaScript Object -->
+	<h3>Creating a JavaScript Object</h3>
+	<p>These examples create a JavaScript object with 4 properties:</p>
+	<p>Using an Object Literal</p>
+	<p id="demo03"></p>
+	<hr>
+
+	<h3>Accessing Object Properties</h3>
+	<p>You can access object properties in two ways:</p>
+	<p>objectName.propertyName</p>
+	<p id="demo04"></p>
+	<hr>
+
+	<p>object["property"]</p>
+	<p id="demo05"></p>
+	<hr>
+
+	<h3>JavaScript Object Methods</h3>
+	<p>Methods are actions that can be performed on objects. Methods are function definitions stored as property values.</p>
+	<p>A method is a function definition stored as a property value.</p>
+	<p id="demo06"></p>
+	<hr>
+
+	<h3>JavaScript Objects are Mutable</h3>
+	<p>Objects are mutable: They are addressed by reference, not by value. If person is an object, the following statement will not create a copy of person:</p>
+	<p>The object x is not a copy of person. The object x is person. The object x and the object person share the same memory address.</p>
+	<p>Any changes to x will also change person :</p>
+	<p id="demo07"></p>
+
+
+<script>
+	// Create and a Variable:
+	let car = "Fiat"
+	document.getElementById("demo").innerHTML = "car : " + car;
+
+	// Create an Object:
+	const cars = {type: "Fiat", model: "500", color: "White"};
+	// Display Data from the Object:
+	document.getElementById("demo02").innerHTML = "The car type is " + cars.type;
+
+	// Creating a Javascript Object
+	const person = {firstName: "herry", lastName: "potter", age: "19", eyeColor: "darkBlack"}
+	// Display Data from the Object:
+	document.getElementById("demo03").innerHTML = person.firstName + " "  + person.lastName + " is " + person.age + " year old ." 
+
+	// Spaces and line breaks are not important. An object initializer can span multiple lines:
+	/*
+	const person = {
+		firstName: "herry",
+		lastName: "potterr",
+		age: "19",
+		eyeColor: "darkBlack"
+	}
+	*/
+	
+	// This example creates an empty JavaScript object, and then adds 4 properties:
+	/*	const person = {};
+			person.firstName = "herry";
+			person.Lastname = "potter";
+			person.age = 19;
+			person.eyeColor = "darkBlack";
+	*/
+
+	// You can access object properties in two ways:
+	// first :
+	document.getElementById("demo04").innerHTML = "The last name is :" + person.firstName; 
+
+	// second
+	document.getElementById("demo05").innerHTML = "The firstName is : " + person["lastName"]
+
+	// A method is a function definition stored as a property value
+	const look = {
+		FName : "John",
+		LName : "Doi",
+		ID : "566",
+		fullName: function(){
+			return this.FName + " " + this.LName;
+		} 
+	}
+	document.getElementById("demo06").innerHTML = look.fullName();
+
+	const lone = {
+		CarName: "Mustang GT",
+		CarModel: "Gt 07",
+		SerisName: 701,
+		age: 3,
+		CarColor: "pink"
+	};
+
+	// Create a Copy
+	const x = lone;
+
+	// Change Age
+	x.age = 4;
+
+	document.getElementById("demo07").innerHTML = lone.CarName + " is " + lone.age + " years old. ";
+
+
+
+</script>
+</body>
+</html>
+
+<!-- In JavaScript, Objects are King. -->
+	<!-- Objects are containers for Properties and Methods.
+	Properties are named Values.
+	Methods are Functions stored as Properties.
+	Properties can be primitive values, functions, or even other objects. -->
+
+<!-- In JavaScript, almost "everything" is an object.
+	Objects are objects
+	Maths are objects
+	Functions are objects
+	Dates are objects
+	Arrays are objects
+	Maps are objects
+	Sets are objects -->
+
+	<!--Value		Type			Comment
+		"Hello"		string			"Hello" is always "Hello"
+		3.14		number			3.14 is always 3.14
+		true		boolean			true is always true
+		false		boolean			false is always false
+		null		null (object)	null is always null
+		undefined	undefined		undefined is always undefined -->

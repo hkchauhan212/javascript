@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS String Method</title>
+</head>
+<body>
+
+	<h1 style="text-align: center;">JavaScript String Methods</h1>
+	<h1 style="text-align: center;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</h1>
+
+	<h3>JavaScript String Length</h3>
+	<p>The length property returns the length of a string:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>JavaScript String charAt()</h3>
+	<p>The charAt() method returns the character at a given position in a string:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>JavaScript String at()</h3>
+	<p>The at() method returns an indexed element from a string:</p>
+	<p id="demo03"></p>
+	<p id="demo04"></p>
+
+	<!-- The at() method returns the character at a specified index (position) in a string.
+	The at() method is supported in all modern browsers since March 2022: -->
+	<br><hr>
+
+	<h3>Property Access [ ]</h3>
+	<p>The first character in the string is:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>Extracting String Parts</h3>
+	<p>There are 3 methods for extracting a part of a string: slice(start, end)substring(start, end)substr(start, length)</p>
+	<br><hr>
+
+	<h3>JavaScript String slice()</h3>
+	<p>slice() extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: start position, and end position (end not included).</p>
+	<p>let part = text.slice(7, 15);</p>
+	<p id="demo06"></p>
+	<p>If you omit the second parameter, the method will slice out the rest of the string:</p>
+	<p id="demo07"></p>
+	<p>If a parameter is negative, the position is counted from the end of the string:</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>JavaScript String substring()</h3>
+	<p>substring() is similar to slice().</p>
+	<p>The difference is that start and end values less than 0 are treated as 0 in substring().</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>JavaScript String substr()</h3>
+	<p>substr() is similar to slice(). The difference is that the second parameter specifies the length of the extracted part.</p>
+	<p id="demo10"></p>
+	<p>The substr() method extract a part of a string and returns the extracted parts in a new string:</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>Converting to Upper and Lower Case</h3>
+	<p>A string is converted to upper case with toUpperCase():</p>
+	<p id="demo12"></p>
+	<p>A string is converted to lower case with toLowerCase():</p>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<h3>JavaScript String concat()</h3>
+	<p>concat() joins two or more strings:</p>
+	<p id="demo14"></p>
+	<br><hr>
+
+	<h3>JavaScript String trim()</h3>
+	<p>The trim() method removes whitespace from both sides of a string:</p>
+	<p><pre>let text05 = "1234Hello word!123456789";</pre></p>
+	<p id="demo15"></p>
+	<br><hr>
+
+	<h3>JavaScript String trimStart()</h3>
+	<p>ECMAScript 2019 added the String method trimStart() to JavaScript. The trimStart() method works like trim(), but removes whitespace only from the start of a string.</p>
+	<p>The trimStart() Method</p>
+	<p id="demo16"></p>
+	<br><hr>
+
+	<h3>JavaScript String trimEnd()</h3>
+	<p>ECMAScript 2019 added the string method trimEnd() to JavaScript. The trimEnd() method works like trim(), but removes whitespace only from the end of a string.</p>
+	<p>The trimEnd() Method</p>
+	<p id="demo17"></p>
+	<br><hr>
+
+	<h3>JavaScript String PaddingJavaScript String Padding</h3>
+	<p>ECMAScript 2017 added two new string methods to JavaScript: padStart() and padEnd() to support padding at the beginning and at the end of a string.</p>
+	<h3>JavaScript String padStart()</h3>
+	<p>The padStart() method pads a string from the start. It pads a string with another string (multiple times) until it reaches a given length.</p>
+	<p id="demo18"></p>
+	<p>It pads the string with another string (multiple times) until it reaches a given length.</p>
+	<p id="demo19"></p>
+	<br><hr>
+
+	<h3>JavaScript String padEnd()</h3>
+	<p>The padEnd() method pads a string from the end. It pads a string with another string (multiple times) until it reaches a given length.</p>
+	<p>It pads the string with another string (multiple times) until it reaches a given length.</p>
+	<p id="demo20"></p>
+	<p>It pads the string with another string (multiple times) until it reaches a given length.</p>
+	<p id="demo21"></p>
+	<br><hr>
+
+
+	<h3>number To String</h3>
+	<p>let q = 5;</p>
+	<p id="demo22"></p>
+	<p>let str02 = q.toString();</p>
+	<p id="demo23"></p>
+	<br><hr>
+
+	<h3>JavaScript String repeat()</h3>
+	<p>The repeat() method returns a string with a number of copies of a string. The repeat() method returns a new string. The repeat() method does not change the original string.</p>
+	<p>repeat() is not supported in Internet Explorer.</p>
+	<p id="demo24"></p>
+	<br><hr>
+
+	<h3>Replacing String Content</h3>
+	<p>The replace() method replaces a specified value with another value in a string:</p>
+	<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+	<button onclick="myFunction()">Try it</button>
+	<p id="demo25">Please visit Microsoft!, Microsoft</p>
+	<br><hr>
+	<!-- Note
+		The replace() method does not change the string it is called on.
+		The replace() method returns a new string.
+		The replace() method replaces only the first match
+		If you want to replace all matches, use a regular expression with the /g flag set. See examples below.
+	-->
+
+	<h3>JavaScript String ReplaceAll()</h3>
+	<p>In 2021, JavaScript introduced the string method replaceAll():</p>
+	<p id="demo26"></p>
+	<br><hr>
+
+	<h3>Converting a String to an Array</h3>
+	<p>JavaScript String split()</p>
+	<p>A string can be converted to an array with the split() method:</p>
+	<p>Display the first array element, after a string split:</p>
+	<p id="demo27"></p>
+	<br><hr>
+
+
+
+	<!-- JavaScript counts positions from zero.
+	First position is 0.           Second position is 1. -->
+<script src="string-method-script.js"></script>
+</body>
+</html>
+
+<!-- Basic String Methods -->
+
+<!-- Javascript strings are primitive and immutable: All string methods produce a new string without altering the original string. -->
+
+<!-- String length
+String charAt()
+String charCodeAt()
+String at()
+String [ ]
+String slice()
+String substring()
+String substr()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String repeat()
+String replace()
+String replaceAll()
+String split() -->
+
+<!-- Extracting String Characters -->
+
+<!-- There are 4 methods for extracting string characters:
+The at(position) Method
+The charAt(position) Method
+The charCodeAt(position) Method
+Using property access [] like in arrays -->
+
+<!-- Extracting String Parts
+There are 3 methods for extracting a part of a string:
+slice(start, end)
+substring(start, end)
+substr(start, length) -->

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Number Properties</title>
+</head>
+<body>
+	<h1 style="text-align: center;">JavaScript Number Properties</h1>
+
+	<h3>JavaScript EPSILON</h3>
+	<p>The difference between 1 and the smallest floating point number greater than 1, in JavaScript is:</p>
+	<p id="demo01"></p>
+	<p>document.getElementById("demo02").innerHTML = (0.1 + 0.2 === 0.3);</p>
+	<p id="demo02"></p>
+	<p>document.getElementById("demo03").innerHTML = Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON;</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>JavaScript MAX_VALUE</h3>
+	<p>Number.MAX_VALUE is a constant representing the largest possible number in JavaScript.</p>
+	<p>The largest possible number in JavaScript is:</p>
+	<p id="demo04"></p>
+	<br>
+	<p>Using a Number property on a variable, or value, will return undefined:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>JavaScript MAX_SAFE_INTEGER</h3>
+	<p>The maximum safe integer in JavaScript is:</p>
+	<p id="demo06"></p>
+	<br>
+	<h3>JavaScript MIN_SAFE_INTEGER</h3>
+	<p>The minimum safe integer in JavaScript is:</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>JavaScript POSITIVE_INFINITY</h3>
+	<p id="demo08"></p>
+	<br>
+	<p>POSITIVE_INFINITY is returned on overflow:</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>JavaScript NEGATIVE_INFINITY</h3>
+	<p>NEGATIVE_INFINITY is returned on overflow:</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>JavaScript NaN - Not a Number</h3>
+	<p>NaN is a JavaScript reserved word for a number that is not a legal number.</p>
+	<p id="demo11"></p>
+	<br>
+	<p>Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):</p>
+	<p id="demo12"></p>
+	<br><hr>
+
+<script>
+	// demo01
+	let k = Number.EPSILON;
+	document.getElementById("demo01").innerHTML = k;
+
+	// demo02
+	document.getElementById("demo02").innerHTML = (0.1 + 0.2 === 0.3);
+
+	// demo03
+	document.getElementById("demo03").innerHTML = Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON;
+
+	// demo04
+	let a = Number.MAX_VALUE;
+	document.getElementById("demo04").innerHTML = a;
+
+	// demo05
+	let b = 6;
+	document.getElementById("demo05").innerHTML = b.MAX_VALUE;
+
+	// demo06
+	let c = Number.MAX_SAFE_INTEGER;
+	document.getElementById("demo06").innerHTML = c;
+
+	// demo07
+	let d = Number.MIN_SAFE_INTEGER;
+	document.getElementById("demo07").innerHTML = d;
+
+	// demo08
+	let e = Number.POSITIVE_INFINITY;
+	document.getElementById("demo08").innerHTML = e;
+
+	// demo09
+	let f = 1 / 0;
+	document.getElementById("demo09").innerHTML = f;
+
+	// demo10
+	let g = -1 / 0;
+	document.getElementById("demo10").innerHTML = g;
+
+	// demo11
+	document.getElementById("demo11").innerHTML = Number.NaN;
+
+	// demo12
+	document.getElementById("demo12").innerHTML = 100 / "Apple";
+</script>
+</body>
+</html>
+

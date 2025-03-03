@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Sets</title>
+</head>
+<body>
+	<h3>JavaScript Sets</h3>
+	<p>A JavaScript Set is a collection of unique values.</p>
+	<p>Each value can only occur once in a Set.</p>
+	<p>The values can be of any type, primitive values or objects.</p>
+	<hr>
+
+	<h3>The new Set() Method</h3>
+	<p>Pass an array to the new Set() constructor:</p>
+	<p id="demo01"></p>
+	<br>
+	<h3>Create a Set and add variables:</h3>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>The add() Method</h3>
+	<p>The add() method adds values to a Set:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Listing the Elements</h3>
+	<p>You can list all Set elements (values) with a for..of loop:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>Sets are Objects</h3>
+	<p id="demo05"></p>
+
+<script>
+	// demo01
+	// Create a Set
+	const letters = new Set(["a","b","c"]);
+	// Display set.size
+	document.getElementById("demo01").innerHTML = "The set has " + letters.size + " values.";
+
+	// demo02
+	// Create a Set
+	var letters07 = new Set();
+	// Create Variables
+	var a = "a";
+	var b = "b";
+	var c = "c";
+	// Add Value as Variables to the set
+	letters07.add(a);
+	letters07.add(b);
+	letters07.add(c);
+	document.getElementById("demo02").innerHTML = "The set has " + letters.size + " values.";
+
+	// demo03
+	// Create a new Set
+	 letters11 = new Set(["a","b","c"]);
+	// Add a new Element
+	letters11.add("d");
+	letters11.add("e");
+	letters11.add("e");
+	letters11.add("e");
+	letters11.add("e");
+	letters11.add("e");
+	letters11.add("e");
+	// Display set.size
+	document.getElementById("demo03").innerHTML = "The set has " + letters11.size + " values.";
+
+	// demo04
+	// Create a Set
+	let letters17 = new Set(["a","b","c","d","e"]);
+	// List all Element
+	let text11 = "";
+	for (let h of letters17) {
+		text11 += h + "<br>";
+	}
+	document.getElementById("demo04").innerHTML =  text11;
+
+	// demo05
+	// Create a new Set
+	const letters09 = new Set(["a","b","c"]);
+	// Display typeof
+	document.getElementById("demo05").innerHTML = "The type of the set is " + typeof letters09;
+</script>
+</body>
+</html>
+
+<!-- 
+How to Create a Set
+You can create a JavaScript Set by:
+
+Passing an array to new Set()
+Create an empty set and use add() to add values
+
+
+ -->

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Numbers</title>
+</head>
+<body>
+	<h1>JavaScript Numbers</h1>
+	<p>Numbers can be written with or without decimals:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<p>Extra large or extra small numbers can be written with scientific (exponent) notation:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>Integer Precision</h3>
+	<p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits.</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Floating Precision</h3>
+	<p>Floating point arithmetic is not always 100% accurate:</p>
+	<p id="demo04"></p>
+	<br>
+	<p>To solve the problem above, it helps to multiply and divide:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>Adding Numbers and Strings</h3>
+	<p>If you add two numbers, the result will be a number:</p>
+	<p id="demo06"></p>
+	<br>
+	<p>If you add two strings, the result will be a string concatenation:</p>
+	<p id="demo07"></p>
+	<br>
+	<p>If you add a number and a numeric string, the result will be a concatenated string:</p>
+	<p id="demo08"></p>
+	<br>
+	<p><b>Note:</b>The JavaScript interpreter works from left to right. First 10 + 20 is added because x and y are both numbers.Then 30 + "30" is concatenated because z is a string.</p>
+	<p>A common mistake is to expect this result to be 30:</p>
+	<p id="demo09"></p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>Numeric Strings</h3>
+	<p>JavaScript will try to convert strings to numbers when dividing:</p>
+	<p id="demo11"></p>
+	<br>
+	<p>JavaScript will try to convert strings to numbers when multiplying:</p>
+	<p id="demo12"></p>
+	<br>
+	<p>JavaScript will try to convert strings to numbers when subtracting:</p>
+	<p id="demo13"></p>
+	<br>
+	<p>JavaScript will NOT convert strings to numbers when adding:</p>
+	<p id="demo14"></p>
+	<br><hr>
+
+	<h2>NaN - Not a Number</h2>
+	<p>NaN is a JavaScript reserved word indicating that a number is not a legal number. Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):</p>
+	<p id="demo15"></p>
+	<br>
+	<p>A number divided by a numeric string becomes a number:</p>
+	<p id="demo16"></p>
+	<br>
+	<p>You can use the global JavaScript function isNaN() to find out if a value is not a number:</p>
+	<p id="demo17"></p>
+	<br>
+	<p>Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN:</p>
+	<p id="demo18"></p>
+	<br>
+	<p>Or the result might be a concatenation like NaN5:</p>
+	<p id="demo19"></p>
+	<br>
+	<p>NaN is a number: typeof NaN returns number:</p>
+	<p id="demo20"></p>
+	<br><hr>
+
+	<h3>Infinity</h3>
+	<p>Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.</p>
+	<p>Infinity is returned if you calculate a number outside the largest possible number:</p>
+	<p id="demo21"></p>
+	<br>
+	<p>Division by zero generates Infinity;</p>
+	<p id="demo22"></p>
+	<br>
+	<p>Infinity is a number: typeof Infinity returns number.</p>
+	<p id="demo23"></p>
+	<br><hr>
+
+	<h3>Hexadecimal</h3>
+	<p>JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.</p>
+	<p id="demo24"></p>
+	<br><hr>
+
+	<h3>JavaScript Numbers as Objects</h3>
+	<p>Normally JavaScript numbers are primitive values created from literals:</p>
+	<p>let x = 123;</p>
+	<p>But numbers can also be defined as objects with the keyword new:</p>
+	<p>let y = new Number(123);</p>
+	<p id="demo25"></p>
+	<br>
+	<p><b>NOTE:</b>Do not create Number objects. The new keyword complicates the code and slows down execution speed. Number Objects can produce unexpected results:</p>
+	<br>
+	<p>Numbers and Number objects cannot be safely compared:</p>
+	<p id="demo26"></p>
+	<p>When using the === operator, x and y are not equal.</p>
+	<p id="demo27"></p>
+	<br>
+	<p>Note the difference between demo28 (x==y) and demo29 (x===y). </p>
+	<p id="demo28"></p>
+	<p id="demo29"></p>
+	<p>Comparing two JavaScript objects always returns false.</p>
+
+<script>
+	// demo01
+	let num01 = 3.14
+	let num02 = 15;
+	document.getElementById("demo01").innerHTML = " A number with decimals : " + num01 + "<br>" + "A number without decimals : " + num02;
+
+	// demo02
+	let num05 = 123e5;
+	let num06 = 123e-5;
+	document.getElementById("demo02").innerHTML = "123e5 : " + num05 + "<br>" + "123e-5 : " + num06;
+
+	// demo03
+	let num10 = 999999999999999;
+	let num11 = 9999999999999999;
+	document.getElementById("demo03").innerHTML = "num 15 : " + num10 + "<br>" + "num 16 : " + num11;
+
+	// demo04	
+	let num15 = 0.1 + 0.2;
+	document.getElementById("demo04").innerHTML = " 0.1 + 0.2 :" + num15;
+
+	// demo05
+	let x = (0.2*10 + 0.1*10) / 10;
+	document.getElementById("demo05").innerHTML =  x;
+
+	// demo06
+	let num20 = 10;
+	let num21 = 20;
+	let num22 = num20 + num21;
+	document.getElementById("demo06").innerHTML = "This is to number add : " + num22;
+
+	// demo07
+	let num25 = "10";
+	let num26 = "20";
+	let num27 = num25 + num26;
+	document.getElementById("demo07").innerHTML = "This is a two string add : " + num27;
+
+	// demo08
+	let num30 = 10;
+	let num31 = "20";
+	let num32 = num30 + num31;
+	document.getElementById("demo08").innerHTML = "This is a add a one number and one string : " + num32;
+
+	// demo09
+	let num35 = 10;
+	let num36 = 20;
+	let num37 = "30";
+	document.getElementById("demo09").innerHTML = "This result is : " + num35 + num36; 
+	// demo10
+	let total = num35 + num36 + num37;
+	document.getElementById("demo10").innerHTML =  total; 
+
+	// demo11
+	let num40 = "100";
+	let num41 = "5";
+	let num42 = num40 / num41;
+	document.getElementById("demo11").innerHTML = " string 100 / 5 : " + num42;
+
+	// demo12
+	let num45 = "100";
+	let num46 = "10";
+	let num47 = num45 * num46;
+	document.getElementById("demo12").innerHTML = " string 100 * 10 : " + num47; 
+
+	// demo13
+	let num50 = "100";
+	let num51 = "10";
+	let num52 = num50 - num51;
+	document.getElementById("demo13").innerHTML = "string 100 - 10 : " + num52;
+
+	// demo14
+	let num55 = "100";
+	let num56 = "10";
+	let num57 = num55 + num56;
+	document.getElementById("demo14").innerHTML = "string 100 + 10 : " + num57;
+
+	// demo15
+	document.getElementById("demo15").innerHTML = 100 / "Apple";
+	
+	// demo16
+	document.getElementById("demo16").innerHTML = " string 100 / 10 : " + "100" / "10";
+
+	// demo17
+	let num60 = 100 / "Apple";
+	document.getElementById("demo17").innerHTML = isNaN(num60);
+
+	// demo18
+	let a = NaN;
+	let b = 5;
+	let c = a + b;
+	document.getElementById("demo18").innerHTML = c;
+
+	// demo19
+	let num61 = NaN;
+	let num62 = "5";
+	document.getElementById("demo19").innerHTML = num61 + num62;
+
+	// demo20
+	let num63 = NaN;
+	document.getElementById("demo20").innerHTML = typeof num63;
+
+	// demo21
+	let myNumber = 2;
+	let txt = "";
+	while (myNumber != Infinity) {
+		myNumber = myNumber * myNumber;
+
+		txt = txt + myNumber + "<br>";
+	}
+	document.getElementById("demo21").innerHTML = txt;
+
+	// demo22 
+	let num65 = 2/0;
+	let num66 = -2/0;
+	document.getElementById("demo22").innerHTML = num65 + "<br>" + num66;
+
+	// demo23
+	document.getElementById("demo23").innerHTML = typeof Infinity;
+
+	// demo24
+	let num70 = 0xFF;
+	document.getElementById("demo24").innerHTML = " 0xFF = " + num70;
+
+	// demo25
+	let num71 = 10;
+	let num72 = new Number(123);
+	document.getElementById("demo25").innerHTML = typeof num71 + "<br>" + typeof num72;
+
+	// demo26
+	let num75 = 500;
+	let num76 = new Number(500);
+	document.getElementById("demo26").innerHTML = (num75==num76);
+
+	// demo27
+	document.getElementById("demo27").innerHTML = (num75===num76);
+
+	// demo28
+	let num77 = new Number(500);
+	document.getElementById("demo28").innerHTML = "(x == y) true or false? : " + (num76==num77);
+
+	// demo29
+	document.getElementById("demo29").innerHTML = "(x === y) true or false? : " + (num76===num77);
+
+</script>	
+</body>
+</html>

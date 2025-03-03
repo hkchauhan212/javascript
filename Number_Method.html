@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Number Method</title>
+</head>
+<body>
+	<h1 style="text-align: center;">JavaScript Number Methods</h1>
+	<h3>The toString() Method</h3>
+	<p>The toString() method returns a number as a string.</p>
+	<p>All number methods can be used on any type of numbers (literals, variables, or expressions):</p>
+	<p>The toString() method converts a number to a string.</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The toExponential() Method</h3>
+	<p>The toExponential() method returns a string, with the number rounded and written using exponential notation.</p>
+	<p>An optional parameter defines the number of digits behind the decimal point.</p>
+	<p>document.getElementById("demo02").innerHTML = y.toExponential() + "" + x.toExponential(2) + "" + y.toExponential(4) + "" + y.toExponential(6);</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>The toFixed() Method</h3>
+	<p>The toFixed() method rounds a number to a given number of digits.</p>
+	<p>For working with money, toFixed(2) is perfect.</p>
+	<p>document.getElementById("demo03").innerHTML = z.toFixed(0) +  "" +  z.toFixed(2) +  "" +  z.toFixed(4) +  "" +  z.toFixed(6);</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>The toPrecision() Method</h3>
+	<p>The toPrecision() method returns a string, with a number written with a specified length:</p>
+	<p>document.getElementById("demo04").innerHTML = a.toPrecision() + "" + a.toPrecision(2) + "" + a.toPrecision(4) + "" + a.toPrecision(6);</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>The valueOf() Method</h3>
+	<p>The valueOf() method returns a number as a number:</p>
+	<p>document.getElementById("demo05").innerHTML = b.valueOf() + "" + (123).valueOf() + "" + (100 + 23).valueOf();</p>
+	<p id="demo05"></p>	
+	<br><hr>
+
+	<h3>The Number() Method</h3>
+	<p>The Number() method converts variables to numbers:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>The Number() Method Used on Dates</h3>
+	<p>The Number() method can convert a date to a number:</p>
+	<p>The Date() method returns the number of milliseconds since 1.1.1970.</p>
+	<p>let c = new Date("1970-01-01");</p>
+	<p id="demo07"></p>
+	<p>let d = new Date("1970-01-02");</p>
+	<p id="demo08"></p>
+	<p>let d = new Date("2024-10-10");</p>
+	<p id="demo09"></p>
+	<br><hr>
+
+	<h3>The parseInt() Method</h3>
+	<h3>parseInt()</h3>
+	<p>parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:</p>
+	<p>The global JavaScript function parseInt() converts strings to numbers:</p>
+	<p>document.getElementById("demo10").innerHTML = parseInt("-10") + "" + parseInt("-10.33") + "" + parseInt("10") + "" + parseInt("10.33") + "" + parseInt("10 6") + "" + parseInt("10 years") + "" + parseInt("years 10");</p>
+	<p id="demo10"></p>
+	<br><hr>
+
+	<h3>The parseFloat() Method</h3>
+	<p>parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:</p>
+	<p>The parseFloat() method converts strings to numbers:</p>
+	<p>document.getElementById("demo11").innerHTML = parseFloat("10") + "" + parseFloat("10.33") + "" + parseFloat("10 6") + "" + parseFloat("10  years") + "" + parseFloat("years 10");</p>
+	<p id="demo11"></p>
+	<br><hr>
+
+	<h3>Number Object Methods</h3>
+	<p>The isInteger() method returns true if the argument is an integer.</p>
+	<p>Otherwise it returns false.</p>
+	<p id="demo12"></p>
+	<br><hr>
+
+	<h3>The isSafeInteger() Method</h3>
+	<p>The isSafeInteger() method returns true if the argument is a safe integer.</p>
+	<p>Otherwise it returns false.</p>
+	<p id="demo13"></p>
+	<br><hr>
+
+	<h3>The Number.parseFloat() Method</h3>
+	<p>Number.parseFloat() converts strings to numbers:</p>
+	<p id="demo14"></p>
+	<br><hr>
+
+	<h3>The Number.parseInt() Method</h3>
+	<p>Number.parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:</p>
+	<p>Number.parseInt() converts strings to whole numbers:</p>
+	<p id="demo15"></p>
+	<br><hr>
+
+
+
+
+<script>
+	// demo01
+	let x = 123;
+	document.getElementById("demo01").innerHTML = x.toString() + "<br>" + (123).toString() + "<br>" + (100 + 23).toString();
+	
+	// demo02
+	let y = 9.656;
+	document.getElementById("demo02").innerHTML = y.toExponential() + "<br>" + x.toExponential(2) + "<br>" + y.toExponential(4) + "<br>" + y.toExponential(6);
+ 
+	// demo03
+	let z = 9.656;
+	document.getElementById("demo03").innerHTML = z.toFixed(0) +  "<br>" +  z.toFixed(2) +  "<br>" +  z.toFixed(4) +  "<br>" +  z.toFixed(6);
+
+	// demo04
+	let a = 9.656;
+	document.getElementById("demo04").innerHTML = a.toPrecision() + "<br>" + a.toPrecision(2) + "<br>" + a.toPrecision(4) + "<br>" + a.toPrecision(6);
+
+	// demo05
+	let b = 123;
+	document.getElementById("demo05").innerHTML = b.valueOf() + "<br>" + (123).valueOf() + "<br>" + (100 + 23).valueOf();
+
+	// demo06
+	document.getElementById("demo06").innerHTML = Number(true) + "<br>" + Number(false) + "<br>" + Number("10") + "<br>" + Number("   10") + "<br>" + Number("10   ") + "<br>" + Number("  10  ") + "<br>" + Number("10.33") + "<br>" + Number("10,33") + "<br>" + Number("10 33") + "<br>" + Number("John");
+
+	// demo07
+	let c = new Date("1970-01-01");
+	document.getElementById("demo07").innerHTML = Number(c);
+	// document.getElementById("demo07").innerHTML = c;
+
+	// demo08
+	let d = new Date("1970-01-02");
+	document.getElementById("demo08").innerHTML = Number(d);
+
+	// demo09
+	let e = new Date("2024-10-10");
+	document.getElementById("demo09").innerHTML = Number(e);
+
+	// demo10
+	document.getElementById("demo10").innerHTML = parseInt("-10") + "<br>" + parseInt("-10.33") + "<br>" + parseInt("10") + "<br>" + parseInt("10.33") + "<br>" + parseInt("10 6") + "<br>" + parseInt("10 years") + "<br>" + parseInt("years 10");
+
+	// demo11
+	document.getElementById("demo11").innerHTML = parseFloat("10") + "<br>" + parseFloat("10.33") + "<br>" + parseFloat("10 6") + "<br>" + parseFloat("10  years") + "<br>" + parseFloat("years 10");
+
+	// demo12
+	document.getElementById("demo12").innerHTML = Number.isInteger(10) + "<br>" + Number.isInteger(-5) + "<br>" + Number.isInteger(10.33) + "<br>" + Number.isInteger(Infinity) + "<br>" + Number.isInteger(NaN); 
+
+	// demo13
+	document.getElementById("demo13").innerHTML = Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(999999999999999) + "<br>" + Number.isSafeInteger(99999999999999999);
+
+	// demo14	
+	document.getElementById("demo14").innerHTML = Number.parseFloat("10") + "<br>" + Number.parseFloat("10.33") + "<br>" + Number.parseFloat("10 20 30") + "<br>" + Number.parseFloat("10 years") + "<br>" + Number.parseFloat("years 10");
+
+	// demo15	
+	document.getElementById("demo15").innerHTML = Number.parseInt("-10") + "<br>" + Number.parseInt("-10.33") + "<br>" + Number.parseInt("10") + "<br>" + Number.parseInt("10.33") + "<br>" + Number.parseInt("10 6") + "<br>" + Number.parseInt("10 years") + "<br>" + Number.parseInt("years 10");
+
+</script>
+</body>
+</html>
+
+<!-- These number methods can be used on all JavaScript numbers: -->
+<!--Method				Description
+	toString()			Returns a number as a string
+	toExponential()		Returns a number written in exponential notation
+	toFixed()			Returns a number written with a number of decimals
+	toPrecision()		Returns a number written with a specified length
+	valueOf()			Returns a number as a number -->
+
+<!-- Converting Variables to Numbers 
+	There are 3 JavaScript methods that can be used to convert a variable to a number: -->
+
+<!--Method			Description 
+	Number()		Returns a number converted from its argument.
+	parseFloat()	Parses its argument and returns a floating point number
+	parseInt()		Parses its argument and returns a whole number -->
+
+<!-- 1. Number() Function
+The Number() function converts a variable to a number.
+let x = "5";
+let y = Number(x);
+console.log(y);  // Outputs: 5
+
+2. parseInt() Function
+parseInt() parses a string and returns an integer.
+let x = "5.5";
+let y = parseInt(x);
+console.log(y);  // Outputs: 5
+
+3. parseFloat() Function
+parseFloat() parses a string and returns a floating-point number.
+let x = "5.5";
+let y = parseFloat(x);
+console.log(y);  // Outputs: 5.5
+
+4. Unary Plus (+) Operator
+The unary plus operator converts a variable to a number.
+let x = "5";
+let y = +x;
+console.log(y);  // Outputs: 5
+
+5. Math.floor() Function
+Math.floor() converts a variable to an integer.
+let x = 5.5;
+let y = Math.floor(x);
+console.log(y);  // Outputs: 5 -->
+
+<!-- Method	Description -->
+<!--Number.isInteger()		Returns true if the argument is an integer
+	Number.isSafeInteger()	Returns true if the argument is a safe integer
+	Number.parseFloat()		Converts a string to a number
+	Number.parseInt()		Converts a string to a whole number -->

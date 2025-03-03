@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Object Construction</title>
+</head>
+<body>
+
+	<h3>JavaScript Object Constructors</h3>
+	<p>Object Constructor Functions Sometimes we need to create many objects of the same type. To create an object type we use an object constructor function. It is considered good practice to name constructor functions with an upper-case first letter.</p>
+	<p id="demo01"></p>
+	<hr>
+
+	<p>Property Default Values</p>
+	<p>A value given to a property will be a default value for all objects created by the constructor:</p>
+	<p id="demo02"></p>
+	<hr>
+
+	<h3>Constructor Function Methods</h3>
+	<p>A constructor function can also have methods:</p>
+	<p id="demo03"></p>
+	<hr>
+
+	<h3>Adding a Method to an Object</h3>
+	<p>Adding a method to a created object is easy:</p>
+	<p id="demo04"></p>
+	<hr>
+
+<script>
+	function person(first, last, age, eye){
+		this.firstname = first;
+		this.lastname = last;
+		this.age = age;
+		this.eyeColor = eye;
+		this.nationality = "English";
+	}
+	// Create a Person object
+	const  myFather01 = new person("chagan", "chavda", 23, "blue");
+	const  myFather02 = new person("magan", "hadiyal", 32, "blue");
+	const  myFather03 = new person("chaman", "lakum", 42, "blue");
+
+	// Display age
+	document.getElementById("demo01").innerHTML = "My father age is " + myFather01.age;
+
+	// Adding a Property to an Object
+	myFather01.nationality = "hindi";
+
+	// Property Default Values
+	document.getElementById("demo02").innerHTML = "my father nationality is " + myFather01.nationality + " and my Mother nationality is " + myFather02.nationality + ".";
+
+	// Constructor Function Methods
+	function Person(first, last, age, eyecolor){
+		this.firstname = first;
+		this.lastname = last;
+		this.age = age;
+		this.eyeColor = eyecolor;
+		this.fullName = function() {
+			return this.firstName + "	 " + this.lastname;
+		}
+	}
+
+	// Create a Person object
+	const myFather05 = new person("john", "Doe", 50, "blue");
+
+	// Display Full name
+	document.getElementById("demo03").innerHTML = "My father is " + myFather05.fullName;
+
+	// Adding a Method to an Object
+	myFather03.changeName = function (name) {
+		this.lastname = name;
+	}
+
+	// Change name
+	myFather03.changeName("ramesh");
+
+	// Display fullname
+	document.getElementById("demo04").innerHTML = "my Father03 name is " + myFather03.lastname;
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Set Date Methods</title>
+</head>
+<body>
+	<h1>JavaScript Set Date Methods</h1>
+	<p>Set Date methods let you set date values (years, months, days, hours, minutes, seconds, milliseconds) for a Date Object.</p>
+
+	<h3>The setFullYear() Method</h3>
+	<p>The setFullYear() method sets the year of a date object. In this example to 2020:</p>
+	<p>The setFullYear() method sets the year of a date object:</p>
+	<p id="demo01"></p>
+	<br>
+	<p>The setFullYear() method can optionally set month and day:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>The setMonth() Method</h3>
+	<p>The setMonth() method sets the month of a date object (0-11):</p>
+	<p>The setMonth() method sets the mont of a date object.</p>
+	<p>Note that months count from 0. December is month 11:</p>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>The setDate() Method</h3>
+	<p>The setDate() method sets the day of a date object (1-31):</p>
+	<p id="demo04"></p>
+	<br>
+	<p>The setDate() method can also be used to add days to a date:</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>The setHours() Method</h3>
+	<p>The setHours() method sets the hours of a date object (0-23):</p>
+	<p>The setHours() method sets the hours of a date object:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>The setMinutes() Method</h3>
+	<p>The setMinutes() method sets the minutes of a date object (0-59):</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>The setSeconds() Method</h3>
+	<p>The setSeconds() method sets the seconds of a date object (0-59):</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>Compare Dates</h3>
+	<p>Dates can easily be compared. The following example compares today's date with January 14, 2100:</p>
+	<p id="demo09"></p>
+
+<script>
+	// demo01
+	let d01 = new Date();
+	d01.setFullYear(2020);
+	document.getElementById("demo01").innerHTML = d01;
+
+	// demo02
+	let d02 = new Date();
+	d02.setFullYear(2020, 11, 5);
+	document.getElementById("demo02").innerHTML = d02;
+
+	// demo03
+	let d03 = new Date();
+	d03.setMonth(11);
+	document.getElementById("demo03").innerHTML = d03;
+
+	// demo04
+	let d04 = new Date();
+	d04.setDate(15);
+	document.getElementById("demo04").innerHTML = d04;
+
+	// demo05
+	let d05 = new Date();
+	d05.setDate(d05.getDate() + 41);
+	document.getElementById("demo05").innerHTML = d05;
+
+	// demo06
+	let d06 = new Date();
+	d06.setHours(15);
+	document.getElementById("demo06").innerHTML = d06;
+
+	// demo07
+	let d07 = new Date();
+	d07.setMinutes(59);
+	document.getElementById("demo07").innerHTML = d07;
+
+	// demo08
+	let d08 = new Date();
+	d08.setSeconds(30);
+	document.getElementById("demo08").innerHTML = d08;
+
+	// demo09	
+	let text;
+	const today = new Date();
+	const someday = new Date();
+	someday.setFullYear(2100, 0, 14);
+	if (someday > today) {
+  		text = "Today is before January 14, 2100.";
+  	} else {
+  			text = "Today is after January 14, 2100.";
+	}
+	document.getElementById("demo09").innerHTML = text;
+
+</script>
+</body>
+</html>
+
+<!-- 
+Set Date Methods:
+Method				Description
+
+setDate()			Set the day as a number (1-31)
+setFullYear()		Set the year (optionally month and day)
+setHours()			Set the hour (0-23)
+setMilliseconds()	Set the milliseconds (0-999)
+setMinutes()		Set the minutes (0-59)
+setMonth()			Set the month (0-11)
+setSeconds()		Set the seconds (0-59)
+setTime()			Set the time (milliseconds since January 1, 1970)
+
+ -->

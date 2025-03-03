@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Object Display</title>
+</head>
+<body>
+
+	<h3>How to Display JavaScript Objects?</h3>
+	<p>Displaying a JavaScript object will output [object Object].</p>
+	<p id="demo01"></p>
+	<hr>
+
+	<p>Display Properties</p>
+	<p id="demo02"></p>
+	<hr>
+
+	<h3>Displaying Properties in a Loop</h3>
+	<p>The properties of an object can be collected in a loop:</p>
+	<p id="demo03"></p>
+	<hr>
+
+	<h3>Using Object.values()</h3>
+	<p>Object.values() creates an array from the property values:</p>
+	<p id="demo04"></p>
+	<hr>
+
+<script>
+	const person = {
+		name: "mansukh",
+		age: "42",
+		city: "morbi gujrat"
+	};
+	// Display Object
+	document.getElementById("demo01").innerHTML = person;
+
+	// Display Properties
+	document.getElementById("demo02").innerHTML = person.name + " age is " + person.age + " and city is " +  person.city;
+
+	// The properties of an object can be collected in a loop:
+	let text = "";
+	for (let x in person) {
+		text += person[x] + " ";
+	};
+	document.getElementById("demo03").innerHTML = text;
+
+	// Create an Array
+	const myArry = Object.values(person);
+	// Display the Arry
+	document.getElementById("demo04").innerHTML = myArry
+</script>
+</body>	
+</html>

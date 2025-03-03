@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Set Methods</title>
+</head>
+<body>
+	<h3>The new Set() Method</h3>
+	<p>Pass an array to the new Set() constructor:</p>
+	<p id="demo01"></p>
+	<br><hr>
+
+	<h3>The add() Method</h3>
+	<p>The add() method adds values to a Set:</p>
+	<p id="demo02"></p>
+	<br>
+	<h3>If you add equal elements, only the first will be saved:</h3>
+	<p id="demo03"></p>
+	<br><hr>
+
+	<h3>Listing Set Elements</h3>
+	<p>You can list all Set elements (values) with a for..of loop:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<h3>The has() Method</h3>
+	<p>The has() method returns true if a specified value exists in a set.</p>
+	<p id="demo05"></p>
+	<br><hr>
+
+	<h3>The forEach() Method</h3>
+	<p>The forEach() method invokes a function for each Set element:</p>
+	<p>forEach() calls a function for each element in a Set:</p>
+	<p id="demo06"></p>
+	<br><hr>
+
+	<h3>The values() Method</h3>
+	<p>The values() method returns an Iterator object with all the values in a Set.</p>
+	<p id="demo07"></p>
+	<br><hr>
+
+	<h3>The keys() Method</h3>
+	<p>The keys() method returns an Iterator object with the values in a Set:</p>
+	<p id="demo08"></p>
+	<br><hr>
+
+	<h3>The entries() Method</h3>
+	<p>The entries() method returns an Iterator with [value,value] pairs from a Set.</p>
+	<p>The entries() method is supposed to return a [key,value] pair from an object. A Set has no keys, so the entries() method returns [value,value].This makes Sets compatible with Maps.</p>
+	<p id="demo09"></p>
+
+<script>
+	// demo01
+	// Create a Set
+	var letters = new Set(["a","b","c"]);
+	// Display set.size
+	document.getElementById("demo01").innerHTML = "The set has " + letters.size + " values.";
+
+	// demo02
+	// Add a new Element
+	letters.add("d");
+	letters.add("e");
+	document.getElementById("demo02").innerHTML = "The set has " + letters.size + " values.";
+
+	// demo03
+	letters.add("f");
+	letters.add("g");
+	letters.add("g");
+	letters.add("g");
+	letters.add("g");
+	letters.add("g");
+	letters.add("g");
+	document.getElementById("demo03").innerHTML = "The set has " + letters.size + " values.";
+
+	// demo04
+	let text = "";
+	for (const x of letters) {
+  		text += x;
+	}
+	document.getElementById("demo04").innerHTML = text;
+
+	// demo05
+	answer = letters.has("d");
+	// answer = letters.has("z");
+	document.getElementById("demo05").innerHTML = "The answer is " + answer;
+
+
+	// demo06
+	let letters51 = new Set (["a","b","c","d","e","f"]);
+	let text01 = "";
+	letters51.forEach (function(value){
+		text01 += value + "<br>";
+	})	
+	document.getElementById("demo06").innerHTML = text01;
+
+	// demo07
+	const myIterator = letters.values();
+	let text05 = "";
+	for(const r of myIterator){
+		text05 += r + "<br>";
+	}
+	document.getElementById("demo07").innerHTML = text05;
+
+	// demo08
+	let text13 = "";
+	for (let y of letters.keys()) {
+	  	text13 += y + "<br>";
+	}
+	document.getElementById("demo08").innerHTML = text13;
+
+	// demo09	
+	let text16 = "";
+	for (const q of letters.entries()) {
+	  	text16 += q + "<br>";
+	}
+	document.getElementById("demo09").innerHTML = text16;
+</script>
+</body>
+</html>

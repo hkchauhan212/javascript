@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Object Methods</title>
+</head>
+<body>
+	<!-- Object methods are actions that can be performed on objects. A method is a function definition stored as a property value. -->
+	<h1>JavaScript Objects</h1>
+	<h2>Object Methods</h2>
+	<p>A method is a function definition stored as a property value.</p>
+	<p id="demo01"></p>
+	<hr>
+
+	<h3>Adding a Method to an Object</h3>
+	<p>Adding a new method to an object is easy:</p>
+	<p id="demo02"></p>
+	<hr>
+
+	<h3>Using JavaScript Methods</h3>
+	<p>This example uses the JavaScript toUpperCase() method to convert a text to uppercase:</p>
+	<p id="demo03"></p>
+	<hr>
+
+
+<script>
+	const person = {
+		firstName: "John",
+		lastName: "Doi",
+		id: 556,
+		fullName: function() {
+			return this.firstName + " " + this.lastName;
+		}
+	};
+	document.getElementById("demo01").innerHTML  = person.fullName();
+
+	//	Adding a Method
+	person.name = function() {
+		return this.firstName + " " + this.lastName;
+	};
+	// Display Object Data
+	document.getElementById("demo02").innerHTML = " my father is  " + person.name();
+
+	// Using JavaScript Methods
+	person.name = function () {
+		return (this.firstName +  " " + this.lastName).toUpperCase();
+	}
+	// Display Object Data
+	document.getElementById("demo03").innerHTML = " My father is " + person.name();
+</script>
+</body>
+</html>

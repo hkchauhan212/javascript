@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Regular Expressions</title>
+</head>
+<body>
+	<h1>Using String search() With a String</h1>
+	<p>Search a string for "W3Schools", and display the position of the match:</p>
+	<p id="demo"></p>
+	<br>
+	<h1>Using String search() With a Regular Expression</h1>
+	<p>Use a regular expression to do a case-insensitive search for "w3schools" in a string:</p>
+	<p id="demo02"></p>
+	<br><hr>
+
+	<h3>Using String replace() With a String</h3>
+	<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+	<button type="button" onclick="myFunction()">Try it!</button>
+	<p id="demo03">Please visit Microsoft!</p>
+	<br><hr>
+
+	<h2>JavaScript Regular Expressions</h2>
+	<p>Do a global search for a "1", followed by zero or one "0" characters:</p>
+	<p id="demo04"></p>
+	<br><hr>
+
+	<script>
+	// demo
+	var text = "Visit W3Schools!"; 
+	var n = text.search("W3Schools");
+	document.getElementById("demo").innerHTML = n;
+
+	// demo02
+	var i = text.search(/W3Schools/i);
+	document.getElementById("demo02").innerHTML = i;
+
+	// demo03
+	function myFunction() {
+		let text = document.getElementById("demo03").innerHTML ;
+		document.getElementById("demo03").innerHTML = 
+		text.replace("Microsoft", "W3Schools");
+	}
+
+	// demo04
+	let text07 = "1, 100 or 1000?";
+	let result = text07.match(/10?/g);
+	document.getElementById("demo04").innerHTML = result;
+</script>
+</body>
+</html>

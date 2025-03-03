@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Operators</title>
+</head>
+<body>
+	<h1 style="text-align: center;">: JavaScript Operators :</h1>
+	<h3>JavaScript Assignment</h3>
+	<p>The = Operator</p>
+	<p id="assign"></p>
+	<br>
+
+	<p>The Assignment (=) Operator</p>
+	<p id="$assign"></p>
+	<br><hr><br>
+
+	<p>JavaScript Addition</p>
+	<p>The Addition Operator (+) adds numbers:</p>
+	<p>h = 5; j = 9;</p>
+	<p id="addi"></p>
+	<br><hr><br>
+
+
+
+	<p>JavaScript Multiplication</p>
+	<p>The Multiplication Operator (*) multiplies numbers:</p>
+	<p>q = 8; w = 8;</p>
+	<p id="multi"></p>
+	<br><hr><br>
+	
+	<h1>Types of JavaScript Operators</h1>
+	<br>
+
+	<h2>JavaScript Arithmetic Operators</h2>
+	<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+	<br><hr><br>
+
+	<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+	<p id="arith"></p>
+		<!-- Operator	Description
+			+	Addition
+			-	Subtraction
+			*	Multiplication
+			**	Exponentiation (ES2016)
+			/	Division
+			%	Modulus (Division Remainder)
+			++	Increment
+			--	Decrement -->
+	<br><hr><br>
+
+	<h2>JavaScript Assignment Operators</h2>
+	<p>Assignment operators assign values to JavaScript variables. The Addition Assignment Operator (+=) adds a value to a variable.</p>
+	<br><hr><br>
+
+	<p>The += Operator</p>
+	<p>let u = 10; x += 5;</p>
+	<p id="ass"></p>
+
+
+	<h2>JavaScript Comparison Operators</h2>
+		<!-- Operator  Description
+			==	equal to
+			===	equal value and equal type
+			!=	not equal
+			!==	not equal value or not equal type
+			>	greater than
+			<	less than
+			>=	greater than or equal to
+			<=	less than or equal to
+			?	ternary operator -->
+
+	<h2>JavaScript String Comparison</h2>
+
+	<p>All conditional operators can be used on both numbers and strings.</p>
+	<p id="demo"></p>
+	<br><hr><br>
+
+	<p>Note that strings are compared alphabetically:</p>
+	<p id="demo02"></p>
+	<br><hr><br>
+
+	<h2>The + Operator</h2>
+	<p>The + operator concatenates (adds) strings.</p>
+	<p id="opera"></p>
+	<br><hr><br>
+
+	<h2>The + Operator</h2>
+	<p>Adding a number and a string, returns a string.</p>
+	<p id="opera02"></p>	
+	<br><hr><br>
+
+	<h2>JavaScript Logical Operators</h2>
+		<!-- Operator	Description
+			&&	logical and
+			||	logical or
+			!	logical not -->
+	<h2>JavaScript Type Operators</h2>
+		<!-- Operator	Description
+		typeof		Returns the type of a variable
+		instanceof	Returns true if an object is an instance of an object type -->
+
+		
+<script>
+	let x = 10;
+	document.getElementById("assign").innerHTML = x;	
+
+	// Assign the value 5 to x
+	let a = 5;
+	// Assign the value 2 to y
+	let b = 2;
+	// Assign the value x + y to z
+	let c = a + b;
+	// Display c
+	document.getElementById("$assign").innerHTML = "The sum of a + b is: " +  c;
+
+	// JavaScript Addition
+	let h = 5, j = 9, k = h + j;
+	document.getElementById("addi").innerHTML = "This is a addition of h + j :" + k + ".";
+
+	// Javascript Multiplication
+	let q = 8, w = 8, e = q * w;
+	document.getElementById("multi").innerHTML = "This is multiple of q * w : "  + e; 
+
+	// JavaScript Arithmetic Operators
+	let o = 3;
+	let p = (100 + 50) * o;
+	document.getElementById("arith").innerHTML = "The JavaScript Arithmetic Operators is a = 3, j = (100 + 20) * o : " + p;
+
+	// The += Operator
+	let u = 5;
+	u += 11;
+	document.getElementById("ass").innerHTML = "This is += Operator u : " + u;
+
+	// JavaScript String Comparison
+	let text1 = "A"
+	let text2 = "B"
+	let result = text1 < text2;
+	document.getElementById("demo").innerHTML = "Is A less than B ? " + result;
+
+	// Note that strings are compared alphabetically
+	let text20 = 20;
+	let text10 = 10;
+	let result02 = text20 > text10;
+	document.getElementById("demo02").innerHTML = "Is 20 less than 5 ? :" + result02;
+
+	// The + Operator
+	let line01 = "john";
+	let line02 = "Doi";
+	let line = line01 + line02;
+	document.getElementById("opera").innerHTML = line;
+
+	// Adding a number and a string, returns a string
+	let op = 5 + 5;
+	let po = "5" + 5;
+	let oop = "hello" + 5;
+	document.getElementById("opera02").innerHTML =  op + "<br>" +  po + "<br>" + oop;
+
+</script>
+</body>
+</html>
+
+<!-- Javascript operators are used to perform different types of mathematical and logical computations.
+	Examples:
+	The Assignment Operator = assigns values
+	The Addition Operator + adds values
+	The Multiplication Operator * multiplies values
+	The Comparison Operator > compares values -->
+
+<!-- Types of JavaScript Operators
+There are different types of JavaScript operators:
+	Arithmetic Operators
+	Assignment Operators
+	Comparison Operators
+	String Operators
+	Logical Operators
+	Bitwise Operators
+	Ternary Operators
+	Type Operators -->
+

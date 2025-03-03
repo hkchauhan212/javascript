@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Object Properties</title>
+</head>
+<body>
+	<h1>JavaScript Object Properties</h1>
+	<h3>Access a Property with .</h3>
+	<p>First method</p>
+	<p id="demo01"></p>
+	<hr>
+
+	<p>Second method</p>
+	<p id="demo02"></p>
+	<hr>
+
+	<p>thired method</p>
+	<p id="demo03"></p>
+	<hr>
+
+	<h3>Adding a new Property</h3>
+	<p>You can add new properties to an existing object by simply giving it a value:</p>
+	<p id="demo04"></p>
+	<hr>
+
+	<p>Add a persone height</p>
+	<p id="demo05"></p>
+	<hr>
+
+	<p>The delete keyword deletes a property from an object:</p>
+	<p>Deleting Properties</p>
+	<p id="demo06"></p>
+	<hr>
+
+	<h3>Nested Objects</h3>
+	<p>Property values in an object can be other objects</p>
+	<p id="demo07"></p>		
+
+<script>
+	const person = {
+		firstName: "John",
+		lastName: "Doi",
+		age: "55",
+		eyeColor: "blue"
+	};
+	// first method
+	document.getElementById("demo01").innerHTML = person.firstName + " is " + person.age + " year old. " ;
+
+	// second manner
+	document.getElementById("demo02").innerHTML = person["firstName"] + person["lastName"];
+
+	// Thired method
+	let x = "firstName";
+	let y = "age";
+	document.getElementById("demo03").innerHTML = person[x] + " is " + person[y] + " year old. "; 
+
+	// Adding New Properties
+	person.nationality = "English";
+	document.getElementById("demo04").innerHTML = person.firstName + " nationality is "  +  person.nationality;
+
+	// Add a ner properties
+	person.height = "152cm";
+	document.getElementById("demo05").innerHTML = person.height;
+
+	// Deleting Properties
+	delete person.height;
+	// delete person["height"];
+	document.getElementById("demo06").innerHTML = person.firstName + " height is " + person.height;
+
+	// Nested Objects
+	const myObj = {
+		name: "herry",
+		age: 30,
+		myCars: {
+			car1: "TATA",
+			car2: "BMW",
+			car3: "Fords"
+		}
+	}
+	// First method
+	// document.getElementById("demo07").innerHTML = myObj.myCars.car1;
+	// second method
+	// document.getElementById("demo07").innerHTML = myObj.myCars["car2"];
+	// Thired method
+		let p1 = "myCars";
+		let p2 = "car2";
+		documentment.getElementById("demo").innerHTML = myObj[p1][p2];
+</script>
+</body>
+</html>
+
+
+<!-- JavaScript Object Properties -->
+	<!-- Accessing JavaScript Properties -->
+		<!-- objectName.property
+		let age = person.age; -->
+
+		<!-- objectName["property"]
+		let age = person["age"]; -->
+
+		<!-- objectName[expression]
+		let age = person[x]; -->
